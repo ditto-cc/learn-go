@@ -32,13 +32,13 @@ func main() {
 	s2 = append(s2[:3], s2[4:]...)
 	printSlice(s2)
 
-	fmt.Println("\nPoping from front")
+	fmt.Println("\nPopping from front")
 	front := s2[0]
 	s2 = s2[1:]
 	fmt.Println("front=", front)
 	printSlice(s2)
 
-	fmt.Println("\nPoping from back")
+	fmt.Println("\nPopping from back")
 	back := s2[len(s2)-1]
 	s2 = s2[:len(s2)-1]
 	fmt.Println("back=", back)

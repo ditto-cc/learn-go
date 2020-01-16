@@ -13,27 +13,27 @@ var (
 )
 
 // zero value
-func varibleZeroVal() {
+func variableZeroVal() {
 	var a int
 	var s string
 	fmt.Printf("%d %q\n", a, s)
 }
 
 // assign value
-func varibleInitVal() {
+func variableInitVal() {
 	var a int = 3
 	var s string = "abc"
 	fmt.Printf("%d %q\n", a, s)
 }
 
 // Type deduction
-func varibleTypeDeduction() {
+func variableTypeDeduction() {
 	var a, b, c, s = 1, 2, true, "abc"
 	fmt.Println(a, b, c, s)
 }
 
-// Shorter Defination
-func varibleConsice() {
+// Shorter Definition
+func variableCandice() {
 	a, b, c, s := 3, 4, true, "abc"
 	b = 5
 	fmt.Println(a, b, c, s)
@@ -84,10 +84,10 @@ func enums() {
 
 func main() {
 	fmt.Println("Hello, World")
-	varibleZeroVal()
-	varibleInitVal()
-	varibleTypeDeduction()
-	varibleConsice()
+	variableZeroVal()
+	variableInitVal()
+	variableTypeDeduction()
+	variableCandice()
 	fmt.Println(aa, bb, ss)
 
 	euler()

@@ -1,4 +1,4 @@
-package leecode
+package leetcode
 
 /**
 
@@ -43,4 +43,3 @@ func lengthOfLongestSubstring(s string) int {
 	}
 	return res
 }
-
