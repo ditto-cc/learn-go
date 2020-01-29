@@ -51,3 +51,12 @@ func (arr *Array) Set(i, e int) {
 	}
 	arr.data[i] = e
 }
+
+func (arr *Array) Contains(e int) bool {
+	for i := 0; i < arr.size; i++ {
+		if arr.data[i] == e {
+			return true
+		}
+	}
+	return false
+}

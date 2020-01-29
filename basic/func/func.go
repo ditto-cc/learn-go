@@ -1,12 +1,11 @@
 package main
 
-import "fmt"
-
-import "reflect"
-
-import "runtime"
-
-import "math"
+import (
+	"fmt"
+	"math"
+	"reflect"
+	"runtime"
+)
 
 func eval(a, b int, op string) (int, error) {
 	res := 0

@@ -9,15 +9,15 @@ type Node struct {
 // BSTree Binary Search Tree
 type BSTree struct {
 	root *Node // Root
-	size int   // Size of treenode
+	size int   // Size of tree node
 }
 
-// NewNode construct Node
-func newNode(Val int) *Node {
+// CreateNode construct Node
+func CreateNode(Val int) *Node {
 	return &Node{Val: Val}
 }
 
-// NewBSTree construct BST
-func NewBSTree() *BSTree {
+// CreateBST construct BST
+func CreateBST() *BSTree {
 	return &BSTree{}
 }

@@ -1,14 +1,12 @@
 package main
 
-import "io/ioutil"
-
-import "fmt"
-
-import "strconv"
-
-import "os"
-
-import "bufio"
+import (
+	"bufio"
+	"fmt"
+	"io/ioutil"
+	"os"
+	"strconv"
+)
 
 func readFile() {
 	const filename = "abc.txt"

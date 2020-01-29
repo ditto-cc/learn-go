@@ -5,9 +5,9 @@ func (node *Node) inOrder(visit func(int)) {
 		return
 	}
 
-	node.lchild.inOrder(visit)
+	node.Lchild.inOrder(visit)
 	visit(node.Val)
-	node.rchild.inOrder(visit)
+	node.Rchild.inOrder(visit)
 }
 
 func (node *Node) preOrder(visit func(int)) {
@@ -16,8 +16,8 @@ func (node *Node) preOrder(visit func(int)) {
 	}
 
 	visit(node.Val)
-	node.lchild.inOrder(visit)
-	node.rchild.inOrder(visit)
+	node.Lchild.inOrder(visit)
+	node.Rchild.inOrder(visit)
 }
 
 func (node *Node) postOrder(visit func(int)) {
@@ -25,8 +25,8 @@ func (node *Node) postOrder(visit func(int)) {
 		return
 	}
 
-	node.lchild.inOrder(visit)
-	node.rchild.inOrder(visit)
+	node.Lchild.inOrder(visit)
+	node.Rchild.inOrder(visit)
 	visit(node.Val)
 }
 

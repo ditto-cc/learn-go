@@ -38,7 +38,7 @@ func isPalindrome(x int) bool {
 		reverse *= 10
 		reverse += x % 10
 		x /= 10
-		if reverse * 10 > x {
+		if reverse*10 > x {
 			break
 		}
 	}

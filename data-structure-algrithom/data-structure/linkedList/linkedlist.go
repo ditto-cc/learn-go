@@ -18,11 +18,19 @@ func CreateLinkedList() *LinkedList {
 	return &LinkedList{size: 0, head: CreateListNode(0, nil)}
 }
 
-func (list *LinkedList) Add(i, e int) {
+func (list *LinkedList) getPrior(i int) *ListNode {
 	p := list.head
 	for j := 0; j < i; j++ {
 		p = p.Next
 	}
+	return p
+}
+
+func (list *LinkedList) Add(i, e int) {
+	if i < 0 || i > list.size {
+		panic("Illegal Index. Add Failed.")
+	}
+	p := list.getPrior(i)
 	p.Next = CreateListNode(e, p.Next)
 	list.size++
 }
@@ -33,4 +41,41 @@ func (list *LinkedList) Append(e int) {
 
 func (list *LinkedList) Prepend(e int) {
 	list.Add(0, e)
+}
+
+func (list *LinkedList) Remove(i int) int {
+	if i < 0 || i >= list.size {
+		panic("Illegal Index. Remove Failed.")
+	}
+	p := list.getPrior(i)
+	delNode := p.Next
+	p.Next = delNode.Next
+	ret := delNode.Val
+	delNode.Next = nil
+	return ret
+}
+
+func (list *LinkedList) PopLeft() int {
+	return list.Remove(0)
+}
+
+func (list *LinkedList) PopRight() int {
+	return list.Remove(list.size - 1)
+}
+
+func (list *LinkedList) Set(i, e int) {
+	if i < 0 || i >= list.size {
+		panic("Illegal Index. Set Failed.")
+	}
+	p := list.getPrior(i)
+	p.Next.Val = e
+}
+
+func (list *LinkedList) Contains(e int) bool {
+	for p := list.head.Next; p != nil; p = p.Next {
+		if p.Val == e {
+			return true
+		}
+	}
+	return false
 }
