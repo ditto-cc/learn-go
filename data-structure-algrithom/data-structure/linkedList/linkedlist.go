@@ -1,5 +1,9 @@
 package linkedlist
 
+import (
+	"strconv"
+)
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -24,6 +28,10 @@ func (list *LinkedList) getPrior(i int) *ListNode {
 		p = p.Next
 	}
 	return p
+}
+
+func (list *LinkedList) Size() int {
+	return list.size
 }
 
 func (list *LinkedList) Add(i, e int) {
@@ -52,6 +60,7 @@ func (list *LinkedList) Remove(i int) int {
 	p.Next = delNode.Next
 	ret := delNode.Val
 	delNode.Next = nil
+	list.size--
 	return ret
 }
 
@@ -78,4 +87,23 @@ func (list *LinkedList) Contains(e int) bool {
 		}
 	}
 	return false
+}
+
+func (list *LinkedList) Get(i int) int {
+	if i < 0 || i >= list.size {
+		panic("Illegal Index. Get Failed.")
+	}
+	p := list.getPrior(i)
+	return p.Val
+}
+
+func (list *LinkedList) String() string {
+	str := "["
+	for p := list.head.Next; p != nil; p = p.Next {
+		str += strconv.Itoa(p.Val)
+		if p.Next != nil {
+			str += "->"
+		}
+	}
+	return str + "]"
 }

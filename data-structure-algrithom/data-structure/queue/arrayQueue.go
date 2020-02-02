@@ -1,5 +1,7 @@
 package queue
 
+import "strconv"
+
 // ArrayQueue FIFO
 type ArrayQueue struct {
 	data []int
@@ -35,4 +37,15 @@ func (q *ArrayQueue) Dequeue() int {
 	ret := q.data[0]
 	q.data = q.data[1:]
 	return ret
+}
+
+func (q *ArrayQueue) String() string {
+	str := "head["
+	for i, e := range q.data {
+		str += strconv.Itoa(e)
+		if i != q.Size()-1 {
+			str += ", "
+		}
+	}
+	return str + "]tail"
 }

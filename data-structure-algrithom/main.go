@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"learn-go/data-structure-algrithom/data-structure/array"
+	"learn-go/data-structure-algrithom/data-structure/queue"
 )
 
 func visit(val int) {
@@ -10,29 +10,15 @@ func visit(val int) {
 }
 
 func main() {
-	// tree := bst.NewBSTree()
-	// arr := []int{4, 2, 1, 3, 6, 5, 7}
-	// for e := range arr {
-	// 	tree.Add(e)
-	// }
-	// tree.InOrder(visit)
-	// fmt.Println()
-	// tree.PreOrder(visit)
-	// fmt.Println()
-	// tree.PostOrder(visit)
-	// fmt.Println()
-	arr := array.CreateArray(10)
-	fmt.Println(arr)
 
-	for i := 0; i < 5; i++ {
-		arr.Append(i*2 + 2)
-		fmt.Println(arr)
-		arr.Prepend(i*2 + 1)
-		fmt.Println(arr)
+	q1 := queue.CreateArrayQueue()
+	q2 := queue.CreateListQueue()
+
+	for i := 0; i < 10; i++ {
+		q1.Enqueue(i)
+		q2.Enqueue(i)
+		fmt.Println(q1)
+		fmt.Println(q2)
 	}
 
-	arr.PopLeft()
-	fmt.Println(arr)
-	arr.PopRight()
-	fmt.Println(arr)
 }

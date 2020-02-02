@@ -1,5 +1,7 @@
 package linkedlist
 
+import "strconv"
+
 type DListNode struct {
 	Val         int
 	Next, Prior *DListNode
@@ -11,7 +13,7 @@ type DLinkedList struct {
 }
 
 func CreateDListNode(val int, prior, next *DListNode) *DListNode {
-	return &DListNode{Val: val, Next: next}
+	return &DListNode{Val: val, Prior: prior, Next: next}
 }
 
 func CreateDLinkedList() *DLinkedList {
@@ -94,4 +96,15 @@ func (list *DLinkedList) Contains(e int) bool {
 
 func (list *DLinkedList) Size() int {
 	return list.size
+}
+
+func (list *DLinkedList) String() string {
+	str := "[<->"
+	for p := list.head.Next; p != list.head; p = p.Next {
+		str += strconv.Itoa(p.Val)
+		if list.head != p.Next {
+			str += "<->"
+		}
+	}
+	return str + "<->]"
 }

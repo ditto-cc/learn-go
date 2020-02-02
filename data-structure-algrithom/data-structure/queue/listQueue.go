@@ -3,7 +3,11 @@ package queue
 import linkedlist "learn-go/data-structure-algrithom/data-structure/linkedList"
 
 type ListQueue struct {
-	data linkedlist.DLinkedList
+	data *linkedlist.DLinkedList
+}
+
+func CreateListQueue() *ListQueue {
+	return &ListQueue{data: linkedlist.CreateDLinkedList()}
 }
 
 func (q *ListQueue) Empty() bool {
@@ -31,4 +35,8 @@ func (q *ListQueue) Dequeue() int {
 	}
 
 	return q.data.PopLeft()
+}
+
+func (q *ListQueue) String() string {
+	return "head" + q.data.String() + "tail"
 }
