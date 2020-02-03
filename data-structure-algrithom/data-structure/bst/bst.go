@@ -1,10 +1,16 @@
 package bst
 
-import "strconv"
+import (
+	"fmt"
+)
+
+type Comparable interface {
+	Compare(Comparable) int
+}
 
 // Node tree node
 type Node struct {
-	Val            int
+	Val            Comparable
 	Lchild, Rchild *Node
 }
 
@@ -15,7 +21,7 @@ type BSTree struct {
 }
 
 // CreateNode construct Node
-func CreateNode(Val int) *Node {
+func CreateNode(Val Comparable) *Node {
 	return &Node{Val: Val}
 }
 
@@ -39,9 +45,9 @@ func (bst *BSTree) String() string {
 			front := q[0]
 			q = q[1:]
 			if front != nil {
-				str += strconv.Itoa(front.Val) + " "
+				str += fmt.Sprintf("%s", front.Val) + " "
 			} else {
-				str += "_ "
+				str += "  "
 			}
 			if h != height {
 				if front == nil {

@@ -1,14 +1,16 @@
 package queue
 
-import "strconv"
+import (
+	"fmt"
+)
 
 // ArrayQueue FIFO
 type ArrayQueue struct {
-	data []int
+	data []interface{}
 }
 
 func CreateArrayQueue() *ArrayQueue {
-	return &ArrayQueue{data: []int{}}
+	return &ArrayQueue{data: []interface{}{}}
 }
 
 func (q *ArrayQueue) Empty() bool {
@@ -19,18 +21,18 @@ func (q *ArrayQueue) Size() int {
 	return len(q.data)
 }
 
-func (q *ArrayQueue) Enqueue(e int) {
+func (q *ArrayQueue) Enqueue(e interface{}) {
 	q.data = append(q.data, e)
 }
 
-func (q *ArrayQueue) GetFront() int {
+func (q *ArrayQueue) GetFront() interface{} {
 	if q.Empty() {
 		panic("Empty Queue. Pop Failed.")
 	}
 	return q.data[0]
 }
 
-func (q *ArrayQueue) Dequeue() int {
+func (q *ArrayQueue) Dequeue() interface{} {
 	if q.Empty() {
 		panic("Empty Queue. Pop Failed.")
 	}
@@ -40,12 +42,12 @@ func (q *ArrayQueue) Dequeue() int {
 }
 
 func (q *ArrayQueue) String() string {
-	str := "head["
+	str := "Head["
 	for i, e := range q.data {
-		str += strconv.Itoa(e)
+		str += fmt.Sprintf("%v", e)
 		if i != q.Size()-1 {
 			str += ", "
 		}
 	}
-	return str + "]tail"
+	return str + "]Tail"
 }

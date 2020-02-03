@@ -1,11 +1,13 @@
 package stack
 
+import "fmt"
+
 type ArrayStack struct {
-	data []int
+	data []interface{}
 }
 
 func CreateArrayStack() *ArrayStack {
-	return &ArrayStack{data: []int{}}
+	return &ArrayStack{data: []interface{}{}}
 }
 
 func (s *ArrayStack) Size() int {
@@ -16,11 +18,11 @@ func (s *ArrayStack) Empty() bool {
 	return 0 == s.Size()
 }
 
-func (s *ArrayStack) Push(e int) {
+func (s *ArrayStack) Push(e interface{}) {
 	s.data = append(s.data, e)
 }
 
-func (s *ArrayStack) Pop() int {
+func (s *ArrayStack) Pop() interface{} {
 	if s.Empty() {
 		panic("Empty Stack. Pop Failed.")
 	}
@@ -30,9 +32,20 @@ func (s *ArrayStack) Pop() int {
 	return ret
 }
 
-func (s *ArrayStack) Top() int {
+func (s *ArrayStack) Top() interface{} {
 	if s.Empty() {
 		panic("Empty Stack. Get Failed.")
 	}
 	return s.data[s.Size()-1]
+}
+
+func (s *ArrayStack) String() string {
+	str := "Bottom["
+	for i := 0; i < s.Size(); i++ {
+		str += fmt.Sprintf("%v", s.data[i])
+		if i != s.Size()-1 {
+			str += ", "
+		}
+	}
+	return str + "]Top"
 }

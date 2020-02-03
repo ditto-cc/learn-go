@@ -2,20 +2,22 @@ package bst
 
 import "math"
 
-func (node *Node) add(e int) *Node {
+func (node *Node) add(e Comparable) *Node {
 	if node == nil {
 		return CreateNode(e)
 	}
-	if e < node.Val {
+
+	switch e.Compare(node.Val) {
+	case -1:
 		node.Lchild = node.Lchild.add(e)
-	} else if e > node.Val {
+	case 1:
 		node.Rchild = node.Rchild.add(e)
 	}
 	return node
 }
 
 // Add element to BSTree
-func (bst *BSTree) Add(e int) {
+func (bst *BSTree) Add(e Comparable) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -65,17 +67,18 @@ func (node *Node) removeMin() *Node {
 	return node
 }
 
-func (bst *BSTree) RemoveMin() int {
-	var ret int
+func (bst *BSTree) RemoveMin() Comparable {
 	if bst == nil && bst.size == 0 {
 		panic("Empty BSTree")
 	}
-	return ret
+	return bst.root.removeMin().Val
 }
 
-func (bst *BSTree) RemoveMax() int {
-	var ret int
-	return ret
+func (bst *BSTree) RemoveMax() Comparable {
+	if bst == nil && bst.size == 0 {
+		panic("Empty BSTree")
+	}
+	return bst.root.removeMax().Val
 }
 
 func (node *Node) height() int {

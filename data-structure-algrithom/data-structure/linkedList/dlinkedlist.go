@@ -1,9 +1,11 @@
 package linkedlist
 
-import "strconv"
+import (
+	"fmt"
+)
 
 type DListNode struct {
-	Val         int
+	Val         interface{}
 	Next, Prior *DListNode
 }
 
@@ -12,7 +14,7 @@ type DLinkedList struct {
 	size int
 }
 
-func CreateDListNode(val int, prior, next *DListNode) *DListNode {
+func CreateDListNode(val interface{}, prior, next *DListNode) *DListNode {
 	return &DListNode{Val: val, Prior: prior, Next: next}
 }
 
@@ -31,7 +33,7 @@ func (list *DLinkedList) getPrior(i int) *DListNode {
 	return p
 }
 
-func (list *DLinkedList) Add(i, e int) {
+func (list *DLinkedList) Add(i int, e interface{}) {
 	if i < 0 || i > list.size {
 		panic("Illegal Index. Add Failed.")
 	}
@@ -42,15 +44,15 @@ func (list *DLinkedList) Add(i, e int) {
 	list.size++
 }
 
-func (list *DLinkedList) Append(e int) {
+func (list *DLinkedList) Append(e interface{}) {
 	list.Add(list.size, e)
 }
 
-func (list *DLinkedList) Prepend(e int) {
+func (list *DLinkedList) Prepend(e interface{}) {
 	list.Add(0, e)
 }
 
-func (list *DLinkedList) Remove(i int) int {
+func (list *DLinkedList) Remove(i int) interface{} {
 	if i < 0 || i >= list.size {
 		panic("Illegal Index. Remove Failed.")
 	}
@@ -64,20 +66,20 @@ func (list *DLinkedList) Remove(i int) int {
 	return delNode.Val
 }
 
-func (list *DLinkedList) PopLeft() int {
+func (list *DLinkedList) PopLeft() interface{} {
 	return list.Remove(0)
 }
 
-func (list *DLinkedList) PopRight() int {
+func (list *DLinkedList) PopRight() interface{} {
 	return list.Remove(list.size - 1)
 }
 
-func (list *DLinkedList) Set(i, e int) {
+func (list *DLinkedList) Set(i int, e interface{}) {
 	p := list.getPrior(i)
 	p.Next.Val = e
 }
 
-func (list *DLinkedList) Get(i int) int {
+func (list *DLinkedList) Get(i int) interface{} {
 	if i < 0 || i >= list.size {
 		panic("Illegal Index. Get Failed.")
 	}
@@ -85,7 +87,7 @@ func (list *DLinkedList) Get(i int) int {
 	return p.Next.Val
 }
 
-func (list *DLinkedList) Contains(e int) bool {
+func (list *DLinkedList) Contains(e interface{}) bool {
 	for p := list.head.Next; p != nil; p = p.Next {
 		if p.Val == e {
 			return true
@@ -99,12 +101,12 @@ func (list *DLinkedList) Size() int {
 }
 
 func (list *DLinkedList) String() string {
-	str := "[<->"
+	str := "["
 	for p := list.head.Next; p != list.head; p = p.Next {
-		str += strconv.Itoa(p.Val)
+		str += fmt.Sprintf("%v", p.Val)
 		if list.head != p.Next {
 			str += "<->"
 		}
 	}
-	return str + "<->]"
+	return str + "]"
 }

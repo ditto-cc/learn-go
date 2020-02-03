@@ -1,11 +1,9 @@
 package linkedlist
 
-import (
-	"strconv"
-)
+import "fmt"
 
 type ListNode struct {
-	Val  int
+	Val  interface{}
 	Next *ListNode
 }
 
@@ -14,7 +12,7 @@ type LinkedList struct {
 	size int
 }
 
-func CreateListNode(val int, next *ListNode) *ListNode {
+func CreateListNode(val interface{}, next *ListNode) *ListNode {
 	return &ListNode{Val: val, Next: next}
 }
 
@@ -34,7 +32,7 @@ func (list *LinkedList) Size() int {
 	return list.size
 }
 
-func (list *LinkedList) Add(i, e int) {
+func (list *LinkedList) Add(i int, e interface{}) {
 	if i < 0 || i > list.size {
 		panic("Illegal Index. Add Failed.")
 	}
@@ -43,15 +41,15 @@ func (list *LinkedList) Add(i, e int) {
 	list.size++
 }
 
-func (list *LinkedList) Append(e int) {
+func (list *LinkedList) Append(e interface{}) {
 	list.Add(list.size, e)
 }
 
-func (list *LinkedList) Prepend(e int) {
+func (list *LinkedList) Prepend(e interface{}) {
 	list.Add(0, e)
 }
 
-func (list *LinkedList) Remove(i int) int {
+func (list *LinkedList) Remove(i int) interface{} {
 	if i < 0 || i >= list.size {
 		panic("Illegal Index. Remove Failed.")
 	}
@@ -64,15 +62,15 @@ func (list *LinkedList) Remove(i int) int {
 	return ret
 }
 
-func (list *LinkedList) PopLeft() int {
+func (list *LinkedList) PopLeft() interface{} {
 	return list.Remove(0)
 }
 
-func (list *LinkedList) PopRight() int {
+func (list *LinkedList) PopRight() interface{} {
 	return list.Remove(list.size - 1)
 }
 
-func (list *LinkedList) Set(i, e int) {
+func (list *LinkedList) Set(i int, e interface{}) {
 	if i < 0 || i >= list.size {
 		panic("Illegal Index. Set Failed.")
 	}
@@ -80,7 +78,7 @@ func (list *LinkedList) Set(i, e int) {
 	p.Next.Val = e
 }
 
-func (list *LinkedList) Contains(e int) bool {
+func (list *LinkedList) Contains(e interface{}) bool {
 	for p := list.head.Next; p != nil; p = p.Next {
 		if p.Val == e {
 			return true
@@ -89,7 +87,7 @@ func (list *LinkedList) Contains(e int) bool {
 	return false
 }
 
-func (list *LinkedList) Get(i int) int {
+func (list *LinkedList) Get(i int) interface{} {
 	if i < 0 || i >= list.size {
 		panic("Illegal Index. Get Failed.")
 	}
@@ -100,7 +98,7 @@ func (list *LinkedList) Get(i int) int {
 func (list *LinkedList) String() string {
 	str := "["
 	for p := list.head.Next; p != nil; p = p.Next {
-		str += strconv.Itoa(p.Val)
+		str += fmt.Sprintf("%v", p.Val)
 		if p.Next != nil {
 			str += "->"
 		}

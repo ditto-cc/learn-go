@@ -1,6 +1,6 @@
 package bst
 
-func (node *Node) inOrder(visit func(int)) {
+func (node *Node) inOrder(visit func(Comparable)) {
 	if node == nil {
 		return
 	}
@@ -10,7 +10,7 @@ func (node *Node) inOrder(visit func(int)) {
 	node.Rchild.inOrder(visit)
 }
 
-func (node *Node) preOrder(visit func(int)) {
+func (node *Node) preOrder(visit func(Comparable)) {
 	if node == nil {
 		return
 	}
@@ -20,7 +20,7 @@ func (node *Node) preOrder(visit func(int)) {
 	node.Rchild.inOrder(visit)
 }
 
-func (node *Node) postOrder(visit func(int)) {
+func (node *Node) postOrder(visit func(Comparable)) {
 	if node == nil {
 		return
 	}
@@ -31,7 +31,7 @@ func (node *Node) postOrder(visit func(int)) {
 }
 
 // InOrder in-Order traverse
-func (bst *BSTree) InOrder(visit func(int)) {
+func (bst *BSTree) InOrder(visit func(Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -40,7 +40,7 @@ func (bst *BSTree) InOrder(visit func(int)) {
 }
 
 // PreOrder pre-Order traverse
-func (bst *BSTree) PreOrder(visit func(int)) {
+func (bst *BSTree) PreOrder(visit func(Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -49,7 +49,7 @@ func (bst *BSTree) PreOrder(visit func(int)) {
 }
 
 // PostOrder post-Order traverse
-func (bst *BSTree) PostOrder(visit func(int)) {
+func (bst *BSTree) PostOrder(visit func(Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -57,7 +57,7 @@ func (bst *BSTree) PostOrder(visit func(int)) {
 	bst.root.postOrder(visit)
 }
 
-func (bst *BSTree) InOrderNR(visit func(int)) {
+func (bst *BSTree) InOrderNR(visit func(Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -77,7 +77,7 @@ func (bst *BSTree) InOrderNR(visit func(int)) {
 	}
 }
 
-func (bst *BSTree) PreOrderNR(visit func(int)) {
+func (bst *BSTree) PreOrderNR(visit func(Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -98,7 +98,7 @@ func (bst *BSTree) PreOrderNR(visit func(int)) {
 	}
 }
 
-func (bst *BSTree) PostOrderNR(visit func(int)) {
+func (bst *BSTree) PostOrderNR(visit func(Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -126,7 +126,7 @@ func (bst *BSTree) PostOrderNR(visit func(int)) {
 	}
 }
 
-func (bst *BSTree) LevelOrder(visit func(int)) {
+func (bst *BSTree) LevelOrder(visit func(Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
