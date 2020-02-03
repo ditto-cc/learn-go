@@ -1,5 +1,7 @@
 package bst
 
+import "strconv"
+
 // Node tree node
 type Node struct {
 	Val            int
@@ -20,4 +22,39 @@ func CreateNode(Val int) *Node {
 // CreateBST construct BST
 func CreateBST() *BSTree {
 	return &BSTree{}
+}
+
+func (bst *BSTree) String() string {
+	if bst == nil || bst.root == nil {
+		return ""
+	}
+	var str string
+	height := bst.Height()
+	h := 0
+	q := []*Node{bst.root}
+	for len(q) > 0 {
+		levelNum := len(q)
+		h++
+		for i := 0; i < levelNum; i++ {
+			front := q[0]
+			q = q[1:]
+			if front != nil {
+				str += strconv.Itoa(front.Val) + " "
+			} else {
+				str += "_ "
+			}
+			if h != height {
+				if front == nil {
+					q = append(q, nil)
+					q = append(q, nil)
+				} else {
+					q = append(q, front.Lchild)
+					q = append(q, front.Rchild)
+				}
+			}
+		}
+		str += "\n"
+	}
+
+	return str
 }

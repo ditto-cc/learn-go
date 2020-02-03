@@ -1,5 +1,7 @@
 package bst
 
+import "math"
+
 func (node *Node) add(e int) *Node {
 	if node == nil {
 		return CreateNode(e)
@@ -74,4 +76,19 @@ func (bst *BSTree) RemoveMin() int {
 func (bst *BSTree) RemoveMax() int {
 	var ret int
 	return ret
+}
+
+func (node *Node) height() int {
+	if node == nil {
+		return 0
+	}
+
+	return 1 + (int)(math.Max((float64)(node.Lchild.height()), (float64)(node.Rchild.height())))
+}
+
+func (bst *BSTree) Height() int {
+	if bst == nil {
+		panic("nil BSTree. Error.")
+	}
+	return bst.root.height()
 }
