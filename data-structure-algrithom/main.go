@@ -6,6 +6,7 @@ import (
 	"learn-go/data-structure-algrithom/data-structure/entity"
 	"learn-go/data-structure-algrithom/data-structure/queue"
 	"learn-go/data-structure-algrithom/data-structure/stack"
+	"strconv"
 )
 
 func visit(s bst.Comparable) {
@@ -40,6 +41,26 @@ func testBSTree(tree *bst.BSTree) {
 }
 
 func main() {
-	tree := bst.CreateBST()
-	testBSTree(tree)
+	//tree := bst.CreateBST()
+	//testBSTree(tree)
+	a := strconv.FormatInt(2147483648,2)
+	b := strconv.FormatInt(1, 2)
+	fmt.Println(a, b)
+	al := len(a)
+	bl := len(b)
+	res := 0
+	var i, j int
+	for i = 0; i < al - bl; i++ {
+		if a[i] == '1' {
+			res ++
+		}
+	}
+	for i < al && j < bl {
+		if a[i] != b[j] {
+			res ++
+		}
+		i++
+		j++
+	}
+	fmt.Println(res)
 }
