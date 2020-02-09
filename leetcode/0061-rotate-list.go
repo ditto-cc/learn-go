@@ -25,10 +25,13 @@ rotate 4 steps to the right: 2->0->1->NULL
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-type ListNode struct {
-    Val int
-    Next *ListNode
-}
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
 
 func rotateRight(head *ListNode, k int) *ListNode {
 	if head == nil {
