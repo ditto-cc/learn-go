@@ -5,3 +5,4 @@
   - 0063. unique paths II
   - 0070. climbing stairs
   - 0509. fibonacci number
+  - 0746 min cost climbing stairs
