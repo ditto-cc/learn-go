@@ -10,3 +10,6 @@
   
 ### Tree
   - 0100. same tree
+  
+### LinkedList
+  - 0083. remove duplicates from sorted list
