@@ -9,10 +9,11 @@
   - 1137. n-th tribonacci number
   
 ### Tree
-  - 0100. same tree
   - 0094. binary tree inorder traversal
+  - 0100. same tree
   - 0101. symmetric tree
   - 0102. binary tree level order traversal
+  - 0104. maximum depth of binary tree
   
 ### LinkedList
   - 0082. remove duplicates from sorted list II
