@@ -10,7 +10,8 @@
   
 ### Tree
   - 0100. same tree
-  - 0094 binary tree inorder traversal.go 
+  - 0094. binary tree inorder traversal.go 
+  - 0101. symmetric tree.go 
   
 ### LinkedList
   - 0082. remove duplicates from sorted list II
