@@ -20,4 +20,5 @@
   - 0083. remove duplicates from sorted list
   
 ### Array
+  - 0027. remove element
   - 0088. merge sorted array
