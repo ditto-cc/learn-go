@@ -20,6 +20,7 @@
   - 0083. remove duplicates from sorted list
   
 ### Array
+  - 0015. 3sum
   - 0027. remove element
   - 0088. merge sorted array
   
