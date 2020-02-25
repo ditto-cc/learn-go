@@ -21,6 +21,7 @@
   
 ### Array
   - 0015. 3sum
+  - 0016. 3sum closest
   - 0027. remove element
   - 0088. merge sorted array
   
