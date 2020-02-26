@@ -24,6 +24,7 @@
   - 0016. 3sum closest
   - 0018. 4sum
   - 0027. remove element
+  - 0033. search in rotated sorted array
   - 0035. search insert positon
   - 0088. merge sorted array
   
