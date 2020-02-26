@@ -32,3 +32,6 @@
   
 ### Backtracking
   - 0017. letter combinations of a phone number
+
+### String
+  - 0058. length of last word
