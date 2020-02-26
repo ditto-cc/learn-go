@@ -26,7 +26,8 @@
   - 0018. 4sum
   - 0027. remove element
   - 0033. search in rotated sorted array
-  - 0035. search insert positon
+  - 0035. search insert position
+  - 0055. jump game
   - 0088. merge sorted array
   
 ### Backtracking
