@@ -20,6 +20,7 @@
   - 0083. remove duplicates from sorted list
   
 ### Array
+  - 0011. container with most water
   - 0015. 3sum
   - 0016. 3sum closest
   - 0018. 4sum
