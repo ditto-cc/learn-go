@@ -18,6 +18,7 @@
 ### LinkedList
   - 0082. remove duplicates from sorted list II
   - 0083. remove duplicates from sorted list
+  - 0206. reverse linked list
   
 ### Array
   - 0011. container with most water
