@@ -41,7 +41,8 @@
   - 0035. search insert position
   - 0055. jump game
   - 0088. merge sorted array
-  
+  - 1103. distribute candies to people
+ 
 ### Backtracking
   - 0017. letter combinations of a phone number
 
