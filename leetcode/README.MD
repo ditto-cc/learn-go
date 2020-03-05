@@ -37,3 +37,4 @@
 ### String
   - 0049. group anagrams
   - 0058. length of last word
+  - 0242. valid anagram
