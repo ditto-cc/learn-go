@@ -35,4 +35,5 @@
   - 0017. letter combinations of a phone number
 
 ### String
+  - 0049. group anagrams
   - 0058. length of last word
