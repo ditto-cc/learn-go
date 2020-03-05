@@ -1,6 +1,7 @@
 package leetcode
 
 import (
+	"sort"
 	"strings"
 )
 
@@ -27,22 +28,21 @@ The order of your output does not matter.
 */
 
 func groupAnagrams(strs []string) [][]string {
-	chars := make([]string, 26, 26)
-	m := map[string][]string{}
+	m := map[string]int{}
 	res := [][]string{}
+	lastIndex := 0
 	for _, str := range strs {
-		for i := range chars {
-			chars[i] = ""
+		strArr := strings.Split(str, "")
+		sort.Strings(strArr)
+		sortedStr := strings.Join(strArr, "")
+		if index, ok := m[sortedStr]; ok {
+			res[index] = append(res[index], str)
+		} else {
+			res = append(res, []string{str})
+			m[sortedStr] = lastIndex
+			lastIndex++
 		}
-		for _, c := range str {
-			index := int(c) - 97
-			chars[index] += string(c)
-		}
-		key := strings.Join(chars, "")
-		m[key] = append(m[key], str)
 	}
-	for _, value := range m {
-		res = append(res, value)
-	}
+
 	return res
 }
