@@ -62,3 +62,6 @@
 
 ### Search
   - 0994. rotting oranges
+  
+### Math
+  - 0829. consecutive numbers sum
