@@ -1,4 +1,4 @@
-package leetcode
+package math
 
 /**
 Given a positive integer N, how many ways can we write it as a sum of consecutive positive integers?
