@@ -50,6 +50,7 @@
   - 0055. jump game
   - 0088. merge sorted array
   - 1103. distribute candies to people
+  - 1295. find numbers with even number of digits 
  
 ### Backtracking
   - 0017. letter combinations of a phone number
@@ -64,4 +65,5 @@
   - 0994. rotting oranges
   
 ### Math
+  - 0461. hamming distance
   - 0829. consecutive numbers sum
