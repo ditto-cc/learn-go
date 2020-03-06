@@ -47,6 +47,7 @@
   - 0027. remove element
   - 0033. search in rotated sorted array
   - 0035. search insert position
+  - 0042. trapping rain water
   - 0055. jump game
   - 0088. merge sorted array
   - 1103. distribute candies to people
