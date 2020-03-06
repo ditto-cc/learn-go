@@ -1,4 +1,6 @@
-package leetcode
+package tree
+
+import "learn-go/leetcode"
 
 /**
 Given an integer array with no duplicates. A maximum tree building on this array is defined as follow:
@@ -26,7 +28,7 @@ The size of the given array will be in the range [1,1000].
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/maximum-binary-tree
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 /**
  * Definition for a binary tree node.
@@ -36,6 +38,6 @@ The size of the given array will be in the range [1,1000].
  *     Right *TreeNode
  * }
  */
-func constructMaximumBinaryTree(nums []int) *TreeNode {
+func constructMaximumBinaryTree(nums []int) *leetcode.TreeNode {
 
 }

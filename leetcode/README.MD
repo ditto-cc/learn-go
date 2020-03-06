@@ -14,6 +14,14 @@
   - 0101. symmetric tree
   - 0102. binary tree level order traversal
   - 0104. maximum depth of binary tree
+  - 0105. construct binary tree from preorder and inorder traversal
+  - 0173. binary search tree iterator
+  - 0226. invert binary tree
+  - 0654. maximum binary tree
+  - 1261. find elements in a contaminated binary tree
+  - 1302. deepest leaves sum
+  - 1305. all elements in two binary search trees
+  - 1315. sum of nodes with even valued grandparent
   
 ### LinkedList
   - 0002. add two numbers

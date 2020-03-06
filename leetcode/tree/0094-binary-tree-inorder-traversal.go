@@ -1,4 +1,6 @@
-package leetcode
+package tree
+
+import "learn-go/leetcode"
 
 /**
 Given a binary tree, return the inorder traversal of its nodes' values.
@@ -18,7 +20,7 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/binary-tree-inorder-traversal
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 /**
  * Definition for a binary tree node.
@@ -28,17 +30,17 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
  *     Right *TreeNode
  * }
  */
-func inorderTraversal(root *TreeNode) []int {
-	s := []*TreeNode{}
+func inorderTraversal(root *leetcode.TreeNode) []int {
+	s := []*leetcode.TreeNode{}
 	res := []int{}
 	p := root
-	var top *TreeNode
+	var top *leetcode.TreeNode
 	for len(s) > 0 || p != nil {
 		if p != nil {
 			s = append(s, p)
 			p = p.Left
 		} else {
-			topIndex := len(s)-1
+			topIndex := len(s) - 1
 			top = s[topIndex]
 			res = append(res, top.Val)
 			s = s[:topIndex]

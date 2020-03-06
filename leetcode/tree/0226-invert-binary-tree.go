@@ -1,4 +1,6 @@
-package leetcode
+package tree
+
+import "learn-go/leetcode"
 
 /**
 Invert a binary tree.
@@ -27,7 +29,7 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you can�
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/invert-binary-tree
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 /**
  * Definition for a binary tree node.
@@ -38,7 +40,7 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you can�
  * }
  */
 
-func invertTree(root *TreeNode) *TreeNode {
+func invertTree(root *leetcode.TreeNode) *leetcode.TreeNode {
 	if root == nil {
 		return nil
 	}

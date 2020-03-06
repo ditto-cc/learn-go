@@ -1,6 +1,9 @@
-package leetcode
+package tree
 
-import "strconv"
+import (
+	"learn-go/leetcode"
+	"strconv"
+)
 
 /**
 Given a binary tree with the following rules:
@@ -82,10 +85,10 @@ Total calls of find() is between [1, 10^4]
  * }
  */
 type FindElements struct {
-	root *TreeNode
+	root *leetcode.TreeNode
 }
 
-func Constructor(root *TreeNode) FindElements {
+func Constructor(root *leetcode.TreeNode) FindElements {
 	return FindElements{root: root}
 }
 

@@ -1,4 +1,6 @@
-package leetcode
+package tree
+
+import "learn-go/leetcode"
 
 /**
 Given a binary tree, find its maximum depth.
@@ -21,7 +23,7 @@ return its depth = 3.
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 /**
  * Definition for a binary tree node.
@@ -39,7 +41,7 @@ func max(a, b int) int {
 		return b
 	}
 }
-func maxDepth(root *TreeNode) int {
+func maxDepth(root *leetcode.TreeNode) int {
 	if root == nil {
 		return 0
 	}

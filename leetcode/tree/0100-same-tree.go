@@ -1,4 +1,6 @@
-package leetcode
+package tree
+
+import "learn-go/leetcode"
 
 /**
 Given two binary trees, write a function to check if they are the same or not.
@@ -36,7 +38,7 @@ Output: false
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/same-tree
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 /**
  * Definition for a binary tree node.
@@ -47,7 +49,7 @@ Output: false
  * }
  */
 
-func isSameTree(p *TreeNode, q *TreeNode) bool {
+func isSameTree(p *leetcode.TreeNode, q *leetcode.TreeNode) bool {
 	if p == nil && q == nil {
 		return true
 	}

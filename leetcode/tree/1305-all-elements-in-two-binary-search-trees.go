@@ -1,4 +1,6 @@
-package leetcode
+package tree
+
+import "learn-go/leetcode"
 
 /**
 Given two binary search trees root1 and root2.
@@ -57,9 +59,9 @@ Each node's value is between [-10^5, 10^5].
  *     Right *TreeNode
  * }
  */
-func getAllElements(root1 *TreeNode, root2 *TreeNode) []int {
+func getAllElements(root1 *leetcode.TreeNode, root2 *leetcode.TreeNode) []int {
 
-	s1, s2 := []*TreeNode{}, []*TreeNode{}
+	s1, s2 := []*leetcode.TreeNode{}, []*leetcode.TreeNode{}
 	p, q := root1, root2
 	arr1, arr2 := []int{}, []int{}
 	for len(s1) > 0 || p != nil {

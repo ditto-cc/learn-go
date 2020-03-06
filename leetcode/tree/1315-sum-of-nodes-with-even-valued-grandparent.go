@@ -1,4 +1,6 @@
-package leetcode
+package tree
+
+import "learn-go/leetcode"
 
 /**
 Given a binary tree, return the sum of values of nodes with even-valued grandparent.  (A grandparent of a node is the parent of its parent, if it exists.)
@@ -34,7 +36,7 @@ The value of nodes is between 1 and 100.
  *     Right *TreeNode
  * }
  */
-func sumOfNode(node *TreeNode) int {
+func sumOfNode(node *leetcode.TreeNode) int {
 	if node == nil || node.Val%2 == 1 {
 		return 0
 	}
@@ -61,7 +63,7 @@ func sumOfNode(node *TreeNode) int {
 	return res
 }
 
-func sumEvenGrandparent(root *TreeNode) int {
+func sumEvenGrandparent(root *leetcode.TreeNode) int {
 	if root == nil {
 		return 0
 	}

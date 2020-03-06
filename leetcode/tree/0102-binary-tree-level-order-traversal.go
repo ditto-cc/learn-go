@@ -1,4 +1,6 @@
-package leetcode
+package tree
+
+import "learn-go/leetcode"
 
 /**
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
@@ -20,7 +22,7 @@ return its level order traversal as:
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/binary-tree-level-order-traversal
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 /**
  * Definition for a binary tree node.
@@ -30,14 +32,14 @@ return its level order traversal as:
  *     Right *TreeNode
  * }
  */
-func levelOrder(root *TreeNode) [][]int {
+func levelOrder(root *leetcode.TreeNode) [][]int {
 	res := [][]int{}
 	if root == nil {
 		return res
 	}
-	q := []*TreeNode{}
+	q := []*leetcode.TreeNode{}
 	q = append(q, root)
-	var frontNode *TreeNode
+	var frontNode *leetcode.TreeNode
 	for len(q) > 0 {
 		levelNodeNum := len(q)
 		levelArr := []int{}

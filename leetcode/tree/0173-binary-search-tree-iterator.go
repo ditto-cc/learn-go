@@ -1,4 +1,6 @@
-package leetcode
+package tree
+
+import "learn-go/leetcode"
 
 /**
 Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
@@ -42,12 +44,12 @@ You may assume that next() call will always be valid, that is, there will be 
  * }
  */
 type BSTIterator struct {
-	s []*TreeNode
-	p *TreeNode
+	s []*leetcode.TreeNode
+	p *leetcode.TreeNode
 }
 
-func Constructor(root *TreeNode) BSTIterator {
-	return BSTIterator{s: []*TreeNode{}, p: root}
+func Constructor(root *leetcode.TreeNode) BSTIterator {
+	return BSTIterator{s: []*leetcode.TreeNode{}, p: root}
 }
 
 /** @return the next smallest number */
