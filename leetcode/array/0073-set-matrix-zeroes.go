@@ -67,3 +67,41 @@ func setZeroes(matrix [][]int) {
 		}
 	}
 }
+
+//
+//func setZeroes(matrix [][]int) {
+//	m, n := len(matrix), len(matrix[0])
+//	firstRowZero := false
+//
+//	for _, e := range matrix[0] {
+//		if e == 0 {
+//			firstRowZero = true
+//			break
+//		}
+//	}
+//
+//	for i := 1; i < m; i++ {
+//		for j, cell := range matrix[i] {
+//			if cell == 0 {
+//				matrix[0][j] = 0
+//				matrix[i][0] = 0
+//			}
+//		}
+//	}
+//
+//	for i := 1; i < m; i++ {
+//		for j := n - 1; j >= 0; j-- {
+//			if matrix[0][j] == 0 || matrix[i][0] == 0 {
+//				matrix[i][j] = 0
+//			}
+//		}
+//	}
+//
+//	if !firstRowZero {
+//		return
+//	}
+//
+//	for i, _ := range matrix[0] {
+//		matrix[0][i] = 0
+//	}
+//}
