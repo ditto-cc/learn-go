@@ -3,6 +3,7 @@
   - 0053. maximum subarray
   - 0062. unique paths
   - 0063. unique paths II
+  - 0064. minimum path sum 
   - 0070. climbing stairs
   - 0509. fibonacci number
   - 0746. min cost climbing stairs
