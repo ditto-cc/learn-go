@@ -49,6 +49,7 @@
   - 0033. search in rotated sorted array
   - 0035. search insert position
   - 0042. trapping rain water
+  - 0048. rotate image 
   - 0055. jump game
   - 0088. merge sorted array
   - 1103. distribute candies to people
@@ -56,6 +57,7 @@
  
 ### Backtracking
   - 0017. letter combinations of a phone number
+  - 0022. generate parentheses 
   - 0051. N-Queens
 
 ### String
@@ -64,10 +66,14 @@
   - 0049. group anagrams
   - 0058. length of last word
   - 0242. valid anagram
+  - 0771. jewels and stones
 
 ### Search
   - 0994. rotting oranges
   
 ### Math
+  - 0007. reverse integer
+  - 0009. palindrome number 
+  - 0013. roman to integer 
   - 0461. hamming distance
   - 0829. consecutive numbers sum

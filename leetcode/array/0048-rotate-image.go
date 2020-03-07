@@ -1,4 +1,4 @@
-package leetcode
+package array
 
 /**
 You are given an n x n 2D matrix representing an image.
@@ -45,13 +45,13 @@ rotate the input matrix in-place such that it becomes:
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/rotate-image
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
-func rotate(matrix [][]int)  {
+func rotate(matrix [][]int) {
 	var i, j, n int
 	n = len(matrix)
-	i, j = 0, n - 1
-	for ; i < j; {
+	i, j = 0, n-1
+	for i < j {
 		matrix[i], matrix[j] = matrix[j], matrix[i]
 		i++
 		j--
