@@ -51,6 +51,7 @@
   - 0042. trapping rain water
   - 0048. rotate image 
   - 0055. jump game
+  - 0073. set matrix zeroes 
   - 0088. merge sorted array
   - 1103. distribute candies to people
   - 1295. find numbers with even number of digits 
