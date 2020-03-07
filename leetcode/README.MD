@@ -55,6 +55,7 @@
   - 0088. merge sorted array
   - 1103. distribute candies to people
   - 1295. find numbers with even number of digits 
+  - 1001. grid illumination
  
 ### Backtracking
   - 0017. letter combinations of a phone number
