@@ -5,6 +5,7 @@
   - 0063. unique paths II
   - 0064. minimum path sum 
   - 0070. climbing stairs
+  - 0322. coin change
   - 0509. fibonacci number
   - 0746. min cost climbing stairs
   - 1137. n-th tribonacci number
