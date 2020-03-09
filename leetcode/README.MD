@@ -31,6 +31,7 @@
   - 0002. add two numbers
   - 0019. remove nth node from end of list
   - 0021. merge two sorted lists
+  - 0023. merge k sorted lists
   - 0024. swap nodes in pairs
   - 0061. rotate list
   - 0082. remove duplicates from sorted list II
