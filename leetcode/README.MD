@@ -51,6 +51,7 @@
   - 0027. remove element
   - 0033. search in rotated sorted array
   - 0035. search insert position
+  - 0036. valid sudoku
   - 0042. trapping rain water
   - 0048. rotate image 
   - 0055. jump game
