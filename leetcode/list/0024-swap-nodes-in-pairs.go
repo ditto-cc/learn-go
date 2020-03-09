@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 Given a linked list, swap every two adjacent nodes and return its head.
 
@@ -25,11 +23,11 @@ Given 1->2->3->4, you should return the list as 2->1->4->3.
  *     Next *ListNode
  * }
  */
-func swapPairs(head *leetcode.ListNode) *leetcode.ListNode {
+func swapPairs(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
-	var p, c, n *leetcode.ListNode
+	var p, c, n *ListNode
 	p, c = head, head.Next
 	p.Next = c.Next
 	c.Next = p

@@ -1,7 +1,5 @@
 package tree
 
-import "learn-go/leetcode"
-
 /**
 Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
 
@@ -40,7 +38,7 @@ Bonus points if you could solve it both recursively and iteratively.
  * }
  */
 
-func isSymmetricNode(node1, node2 *leetcode.TreeNode) bool {
+func isSymmetricNode(node1, node2 *TreeNode) bool {
 	if node1 == nil && node2 == nil {
 		return true
 	}
@@ -50,7 +48,7 @@ func isSymmetricNode(node1, node2 *leetcode.TreeNode) bool {
 	return isSymmetricNode(node1.Left, node2.Right) && isSymmetricNode(node1.Right, node2.Left)
 }
 
-func isSymmetric(root *leetcode.TreeNode) bool {
+func isSymmetric(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}

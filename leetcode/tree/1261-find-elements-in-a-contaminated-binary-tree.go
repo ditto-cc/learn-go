@@ -1,7 +1,6 @@
 package tree
 
 import (
-	"learn-go/leetcode"
 	"strconv"
 )
 
@@ -85,10 +84,10 @@ Total calls of find() is between [1, 10^4]
  * }
  */
 type FindElements struct {
-	root *leetcode.TreeNode
+	root *TreeNode
 }
 
-func Constructor(root *leetcode.TreeNode) FindElements {
+func Constructor(root *TreeNode) FindElements {
 	return FindElements{root: root}
 }
 

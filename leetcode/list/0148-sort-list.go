@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 Sort a linked list in O(n log n) time using constant space complexity.
 
@@ -27,7 +25,7 @@ Output: -1->0->3->4->5
  * }
  */
 
-func middle(head, tail *leetcode.ListNode) *leetcode.ListNode {
+func middle(head, tail *ListNode) *ListNode {
 	p, q := head, head
 	for q.Next != tail && q.Next.Next != nil {
 		p = p.Next
@@ -36,7 +34,7 @@ func middle(head, tail *leetcode.ListNode) *leetcode.ListNode {
 	return p
 }
 
-func merge(head, mid, tail *leetcode.ListNode) {
+func merge(head, mid, tail *ListNode) {
 
 	p, q := head, mid
 	for p.Next != mid.Next || q.Next != tail {
@@ -54,7 +52,7 @@ func merge(head, mid, tail *leetcode.ListNode) {
 	}
 }
 
-func mergeSort(head, tail *leetcode.ListNode) {
+func mergeSort(head, tail *ListNode) {
 	if head == tail || head.Next == tail || head.Next.Next == tail {
 		return
 	}
@@ -64,8 +62,8 @@ func mergeSort(head, tail *leetcode.ListNode) {
 	merge(head, mid, tail)
 }
 
-func sortList(head *leetcode.ListNode) *leetcode.ListNode {
-	dummy := &leetcode.ListNode{Next: head}
+func sortList(head *ListNode) *ListNode {
+	dummy := &ListNode{Next: head}
 	mergeSort(dummy, nil)
 	return dummy.Next
 }

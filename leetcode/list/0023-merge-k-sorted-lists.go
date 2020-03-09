@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
 
@@ -28,7 +26,7 @@ Output: 1->1->2->3->4->4->5->6
  * }
  */
 
-func down(h []*leetcode.ListNode, i, end int) {
+func down(h []*ListNode, i, end int) {
 	for i*2+1 < end {
 		lc := i*2 + 1
 		if lc+1 < end && h[lc+1].Val < h[lc].Val {
@@ -42,7 +40,7 @@ func down(h []*leetcode.ListNode, i, end int) {
 	}
 }
 
-func mergeKLists(lists []*leetcode.ListNode) *leetcode.ListNode {
+func mergeKLists(lists []*ListNode) *ListNode {
 	for i := 0; i < len(lists); {
 		if lists[i] == nil {
 			lists = append(lists[:i], lists[i+1:]...)
@@ -57,7 +55,7 @@ func mergeKLists(lists []*leetcode.ListNode) *leetcode.ListNode {
 		return lists[0]
 	}
 
-	dummy := &leetcode.ListNode{}
+	dummy := &ListNode{}
 	p := dummy
 	for i := (n - 1) / 2; i >= 0; i-- {
 		down(lists, i, n)

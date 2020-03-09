@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 Reverse a singly linked list.
 
@@ -25,12 +23,12 @@ A linked list can be reversed either iteratively or recursively. Could you imple
  *     Next *ListNode
  * }
  */
-func reverseList(head *leetcode.ListNode) *leetcode.ListNode {
+func reverseList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
 
-	var pre, cur *leetcode.ListNode = nil, head
+	var pre, cur *ListNode = nil, head
 	for cur != nil {
 		next := cur.Next
 		cur.Next = pre

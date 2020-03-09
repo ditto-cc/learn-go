@@ -1,7 +1,6 @@
 package tree
 
 import (
-	"learn-go/leetcode"
 	"math"
 )
 
@@ -36,14 +35,14 @@ The value of nodes is between 1 and 100.
  * }
  */
 
-func height(node *leetcode.TreeNode) int {
+func height(node *TreeNode) int {
 	if node == nil {
 		return 0
 	}
 	return 1 + int(math.Max(float64(height(node.Left)), float64(height(node.Right))))
 }
 
-func countDeepestLeaves(node *leetcode.TreeNode, height int) int {
+func countDeepestLeaves(node *TreeNode, height int) int {
 	if node == nil {
 		return 0
 	}
@@ -54,7 +53,7 @@ func countDeepestLeaves(node *leetcode.TreeNode, height int) int {
 	return res + countDeepestLeaves(node.Left, height-1) + countDeepestLeaves(node.Right, height-1)
 }
 
-func deepestLeavesSum(root *leetcode.TreeNode) int {
+func deepestLeavesSum(root *TreeNode) int {
 	h := height(root)
 	return countDeepestLeaves(root, h)
 }

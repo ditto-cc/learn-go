@@ -1,7 +1,5 @@
 package tree
 
-import "learn-go/leetcode"
-
 /**
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
 
@@ -32,14 +30,14 @@ return its level order traversal as:
  *     Right *TreeNode
  * }
  */
-func levelOrder(root *leetcode.TreeNode) [][]int {
+func levelOrder(root *TreeNode) [][]int {
 	res := [][]int{}
 	if root == nil {
 		return res
 	}
-	q := []*leetcode.TreeNode{}
+	q := []*TreeNode{}
 	q = append(q, root)
-	var frontNode *leetcode.TreeNode
+	var frontNode *TreeNode
 	for len(q) > 0 {
 		levelNodeNum := len(q)
 		levelArr := []int{}

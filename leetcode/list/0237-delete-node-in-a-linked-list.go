@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.
 
@@ -42,7 +40,7 @@ Do not return anything from your function.
  *     Next *ListNode
  * }
  */
-func deleteNode(node *leetcode.ListNode) {
+func deleteNode(node *ListNode) {
 	node.Val = node.Next.Val
 	node.Next = node.Next.Next
 }

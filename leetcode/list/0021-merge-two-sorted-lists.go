@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
 
@@ -22,9 +20,9 @@ Output: 1->1->2->3->4->4
  *     Next *ListNode
  * }
  */
-func mergeTwoLists(l1 *leetcode.ListNode, l2 *leetcode.ListNode) *leetcode.ListNode {
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 
-	head := &leetcode.ListNode{Next: l1}
+	head := &ListNode{Next: l1}
 	l1 = head
 	for ; l1.Next != nil && l2 != nil; l1 = l1.Next {
 		if l1.Next.Val > l2.Val {

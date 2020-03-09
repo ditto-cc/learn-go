@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 Given a sorted linked list, delete all duplicates such that each element appear only once.
 
@@ -27,11 +25,11 @@ Output: 1->2->3
  * }
  */
 
-func deleteDuplicates(head *leetcode.ListNode) *leetcode.ListNode {
+func deleteDuplicates(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
-	head = &leetcode.ListNode{Next: head}
+	head = &ListNode{Next: head}
 	pre, cur, next := head, head.Next, head.Next.Next
 	for cur != nil && next != nil {
 		if cur.Val != next.Val {

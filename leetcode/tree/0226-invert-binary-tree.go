@@ -1,7 +1,5 @@
 package tree
 
-import "learn-go/leetcode"
-
 /**
 Invert a binary tree.
 
@@ -40,7 +38,7 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you canâ
  * }
  */
 
-func invertTree(root *leetcode.TreeNode) *leetcode.TreeNode {
+func invertTree(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
 	}

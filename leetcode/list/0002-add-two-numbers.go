@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
@@ -25,10 +23,10 @@ Explanation: 342 + 465 = 807.
  *     Next *ListNode
  * }
  */
-func addTwoNumbers(l1 *leetcode.ListNode, l2 *leetcode.ListNode) *leetcode.ListNode {
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	var carry int
 	head := l1
-	l1, l2 = &leetcode.ListNode{Next: l1}, &leetcode.ListNode{Next: l2}
+	l1, l2 = &ListNode{Next: l1}, &ListNode{Next: l2}
 
 	for ; l1.Next != nil && l2.Next != nil; l1, l2 = l1.Next, l2.Next {
 		l1.Next.Val += l2.Next.Val + carry
@@ -42,7 +40,7 @@ func addTwoNumbers(l1 *leetcode.ListNode, l2 *leetcode.ListNode) *leetcode.ListN
 
 	for ; carry != 0; l1 = l1.Next {
 		if l1.Next == nil {
-			l1.Next = &leetcode.ListNode{Val: carry}
+			l1.Next = &ListNode{Val: carry}
 			break
 		}
 		l1.Next.Val += carry

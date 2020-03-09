@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 Given a linked list, rotate the list to the right by k places, where k is non-negative.
 
@@ -35,11 +33,11 @@ rotate 4 steps to the right: 2->0->1->NULL
  * }
  */
 
-func rotateRight(head *leetcode.ListNode, k int) *leetcode.ListNode {
+func rotateRight(head *ListNode, k int) *ListNode {
 	if head == nil {
 		return nil
 	}
-	q := &leetcode.ListNode{Next: head}
+	q := &ListNode{Next: head}
 
 	length := 0
 	for p := head; p != nil; p = p.Next {

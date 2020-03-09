@@ -1,7 +1,5 @@
 package tree
 
-import "learn-go/leetcode"
-
 /**
 Given a binary tree, find its maximum depth.
 
@@ -41,7 +39,7 @@ func max(a, b int) int {
 		return b
 	}
 }
-func maxDepth(root *leetcode.TreeNode) int {
+func maxDepth(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}

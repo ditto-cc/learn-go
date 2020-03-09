@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 Given a singly linked list L: L0→L1→…→Ln-1→Ln,
 reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
@@ -28,7 +26,7 @@ Given 1->2->3->4->5, reorder it to 1->5->2->4->3.
  * }
  */
 
-func middle(head, tail *leetcode.ListNode) *leetcode.ListNode {
+func middle(head, tail *ListNode) *ListNode {
 	p, q := head, head
 	for q.Next != tail && q.Next.Next != nil {
 		p = p.Next
@@ -37,12 +35,12 @@ func middle(head, tail *leetcode.ListNode) *leetcode.ListNode {
 	return p
 }
 
-func reorderList(head *leetcode.ListNode) {
+func reorderList(head *ListNode) {
 	if head == nil || head.Next == nil {
 		return
 	}
 	mid := middle(head, nil)
-	var pre, cur, next *leetcode.ListNode
+	var pre, cur, next *ListNode
 	pre, cur = nil, mid.Next
 	mid.Next = nil
 	for cur != nil {

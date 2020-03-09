@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 Given a linked list, remove the n-th node from the end of list and return its head.
 
@@ -30,11 +28,11 @@ Could you do this in one pass?
  *     Next *ListNode
  * }
  */
-func removeNthFromEnd(head *leetcode.ListNode, n int) *leetcode.ListNode {
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	if head == nil {
 		return head
 	}
-	dummy := &leetcode.ListNode{Next: head}
+	dummy := &ListNode{Next: head}
 	p, q := dummy, dummy
 	for ; n > 0; n-- {
 		q = q.Next

@@ -1,7 +1,5 @@
 package tree
 
-import "learn-go/leetcode"
-
 /**
 Given preorder and inorder traversal of a tree, construct the binary tree.
 
@@ -45,17 +43,17 @@ func findElementIndex(arr []int, l, r, val int) int {
 	return index
 }
 
-func buildTreeNode(pre, in []int, pl, pr, il, ir int) *leetcode.TreeNode {
+func buildTreeNode(pre, in []int, pl, pr, il, ir int) *TreeNode {
 	if pl > pr {
 		return nil
 	}
-	node := &leetcode.TreeNode{Val: pre[pl]}
+	node := &TreeNode{Val: pre[pl]}
 	imid := findElementIndex(in, il, ir, pre[pl])
 	node.Left = buildTreeNode(pre, in, pl+1, pl+imid-il, il, imid-1)
 	node.Right = buildTreeNode(pre, in, pl+imid-il+1, pr, imid+1, ir)
 	return node
 }
 
-func buildTree(preorder []int, inorder []int) *leetcode.TreeNode {
+func buildTree(preorder []int, inorder []int) *TreeNode {
 	return buildTreeNode(preorder, inorder, 0, len(preorder)-1, 0, len(inorder)-1)
 }

@@ -1,7 +1,5 @@
 package list
 
-import "learn-go/leetcode"
-
 /**
 Given head which is a reference node to a singly-linked list. The value of each node in the linked list is either 0 or 1. The linked list holds the binary representation of a number.
 
@@ -51,7 +49,7 @@ Each node's value is either 0 or 1.
  *     Next *ListNode
  * }
  */
-func getDecimalValue(head *leetcode.ListNode) int {
+func getDecimalValue(head *ListNode) int {
 	if head == nil {
 		return 0
 	}

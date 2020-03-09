@@ -1,7 +1,5 @@
 package tree
 
-import "learn-go/leetcode"
-
 /**
 Given two binary trees, write a function to check if they are the same or not.
 
@@ -49,7 +47,7 @@ Output: false
  * }
  */
 
-func isSameTree(p *leetcode.TreeNode, q *leetcode.TreeNode) bool {
+func isSameTree(p *TreeNode, q *TreeNode) bool {
 	if p == nil && q == nil {
 		return true
 	}
