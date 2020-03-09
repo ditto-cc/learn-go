@@ -75,6 +75,7 @@
   - 0058. length of last word
   - 0242. valid anagram
   - 0771. jewels and stones
+  - 1374. generate a string with characters that have odd counts
 
 ### Search
   - 0034. find first and last position of element in sorted array
