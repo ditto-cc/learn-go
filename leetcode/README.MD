@@ -78,7 +78,11 @@
 
 ### Search
   - 0994. rotting oranges
-  
+  - 1001. grid illumination
+
+### Stack
+  - 0020. valid parentheses
+
 ### Math
   - 0007. reverse integer
   - 0009. palindrome number 

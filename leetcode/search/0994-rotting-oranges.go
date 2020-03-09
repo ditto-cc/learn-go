@@ -1,4 +1,4 @@
-package leetcode
+package search
 
 /**
 In a given grid, each cell can have one of three values:

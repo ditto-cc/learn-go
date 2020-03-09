@@ -1,4 +1,4 @@
-package leetcode
+package search
 
 /**
 On a N x N grid of cells, each cell (x, y) with 0 <= x < N and 0 <= y < N has a lamp.
@@ -69,7 +69,7 @@ func gridIllumination(N int, lamps [][]int, queries [][]int) []int {
 	subDiaMemo, mainDiaMemo := make(map[int]int), make(map[int]int)
 
 	for _, location := range lamps {
-		doMapPlus(mainDiaMemo, location[0]-location[1]+N-1, 1)
+		doMapPlus(mainDiaMemo, location[0]-location[1], 1)
 		doMapPlus(subDiaMemo, location[0]+location[1], 1)
 		doMapPlus(rowMemo, location[0], 1)
 		doMapPlus(colMemo, location[1], 1)
@@ -80,7 +80,7 @@ func gridIllumination(N int, lamps [][]int, queries [][]int) []int {
 	for k, query := range queries {
 		x, y := query[0], query[1]
 
-		if isLighted(mainDiaMemo, x-y+N-1) || isLighted(subDiaMemo, x+y) ||
+		if isLighted(mainDiaMemo, x-y) || isLighted(subDiaMemo, x+y) ||
 			isLighted(rowMemo, x) || isLighted(colMemo, y) {
 			res[k] = 1
 		}
@@ -94,13 +94,14 @@ func gridIllumination(N int, lamps [][]int, queries [][]int) []int {
 				if j < 0 {
 					continue
 				}
-				if _, ok := lampSet[N*i+j]; ok {
-					doMapPlus(mainDiaMemo, i-j+N-1, -1)
+				key := N*i + j
+				if _, ok := lampSet[key]; ok {
+					doMapPlus(mainDiaMemo, i-j, -1)
 					doMapPlus(subDiaMemo, i+j, -1)
 					doMapPlus(rowMemo, i, -1)
 					doMapPlus(colMemo, j, -1)
 
-					delete(lampSet, i*N+j)
+					delete(lampSet, key)
 				}
 			}
 		}
