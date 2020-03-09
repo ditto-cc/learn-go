@@ -77,6 +77,7 @@
   - 0771. jewels and stones
 
 ### Search
+  - 0034. find first and last position of element in sorted array
   - 0994. rotting oranges
   - 1001. grid illumination
 
