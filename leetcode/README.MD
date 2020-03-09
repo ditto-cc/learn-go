@@ -90,3 +90,4 @@
   - 0013. roman to integer 
   - 0461. hamming distance
   - 0829. consecutive numbers sum
+  - 1342. number of steps to reduce a number to zero
