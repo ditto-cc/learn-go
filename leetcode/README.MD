@@ -14,6 +14,7 @@
   
 ### Tree
   - 0094. binary tree inorder traversal
+  - 0098. validate binary search tree
   - 0100. same tree
   - 0101. symmetric tree
   - 0102. binary tree level order traversal
