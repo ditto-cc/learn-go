@@ -64,6 +64,7 @@
   - 0055. jump game
   - 0073. set matrix zeroes 
   - 0088. merge sorted array
+  - 1013. partition array into three parts with equal sum
   - 1103. distribute candies to people
   - 1295. find numbers with even number of digits 
   - 1001. grid illumination
