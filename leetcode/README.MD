@@ -69,7 +69,8 @@
   - 1103. distribute candies to people
   - 1295. find numbers with even number of digits 
   - 1001. grid illumination
- 
+  - 1365. how many numbers are smaller than the current number
+
 ### Backtracking
   - 0017. letter combinations of a phone number
   - 0022. generate parentheses 
