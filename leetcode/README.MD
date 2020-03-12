@@ -64,6 +64,7 @@
   - 0055. jump game
   - 0073. set matrix zeroes 
   - 0088. merge sorted array
+  - 0807. max increase to keep city skyline
   - 1010. pairs of songs with total durations divisible by 60
   - 1013. partition array into three parts with equal sum
   - 1103. distribute candies to people
