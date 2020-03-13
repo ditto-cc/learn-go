@@ -1,4 +1,4 @@
-package array
+package backtracking
 
 /**
 Given a collection of distinct integers, return all possible permutations.

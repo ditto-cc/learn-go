@@ -61,8 +61,6 @@
   - 0036. valid sudoku
   - 0041. first missing positive
   - 0042. trapping rain water
-  - 0046. permutations
-  - 0047. permutations-II
   - 0048. rotate image 
   - 0055. jump game
   - 0073. set matrix zeroes 
@@ -79,7 +77,12 @@
 
 ### Backtracking
   - 0017. letter combinations of a phone number
-  - 0022. generate parentheses 
+  - 0022. generate parentheses
+  - 0031. next permutation
+  - 0039. combination sum
+  - 0040. combination sum II
+  - 0046. permutations
+  - 0047. permutations-II
   - 0051. N-Queens
   - 0077. combinations
 
