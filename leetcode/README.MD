@@ -37,6 +37,7 @@
   - 0021. merge two sorted lists
   - 0023. merge k sorted lists
   - 0024. swap nodes in pairs
+  - 0025. Reverse Nodes in k-Group 
   - 0061. rotate list
   - 0082. remove duplicates from sorted list II
   - 0083. remove duplicates from sorted list
@@ -79,6 +80,7 @@
   - 0022. generate parentheses 
   - 0051. N-Queens
   - 0077. combinations
+
 ### String
   - 0003. longest substring without repeating characters
   - 0014. longest common prefix
