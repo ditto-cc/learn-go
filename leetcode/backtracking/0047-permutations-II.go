@@ -26,12 +26,12 @@ func permuteUnique(nums []int) [][]int {
 	n := len(nums)
 	visit := make([]bool, n)
 
-	genPermute(&res, []int{}, nums, visit, n)
+	genPermute2(&res, []int{}, nums, visit, n)
 
 	return res
 }
 
-func genPermute(res *[][]int, per, nums []int, visit []bool, remain int) {
+func genPermute2(res *[][]int, per, nums []int, visit []bool, remain int) {
 
 	if remain == 0 {
 		temp := make([]int, len(per))
@@ -49,7 +49,7 @@ func genPermute(res *[][]int, per, nums []int, visit []bool, remain int) {
 		visit[i] = true
 		per = append(per, nums[i])
 
-		genPermute(res, per, nums, visit, remain-1)
+		genPermute2(res, per, nums, visit, remain-1)
 
 		visit[i] = false
 		per = per[:len(per)-1]
