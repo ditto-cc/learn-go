@@ -61,6 +61,7 @@
   - 0036. valid sudoku
   - 0041. first missing positive
   - 0042. trapping rain water
+  - 0046. permutations
   - 0048. rotate image 
   - 0055. jump game
   - 0073. set matrix zeroes 
