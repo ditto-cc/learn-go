@@ -62,9 +62,9 @@ func lengthOfLIS(nums []int) int {
 // 	l := 0
 // 	for _, e := range nums {
 // 		i := sort.SearchInts(subArray, e)
-// 		if i < l && subArray[i] > e {
+// 		if i < l {
 // 			subArray[i] = e
-// 		} else if i == l {
+// 		} else {
 // 			subArray = append(subArray, e)
 // 			l++
 // 		}
