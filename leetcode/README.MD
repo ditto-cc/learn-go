@@ -10,6 +10,7 @@
   - 0300. Longest Increasing Subsequence
   - 0322. coin change
   - 0509. fibonacci number
+  - 0673. number of longest increasing subsequence
   - 0746. min cost climbing stairs
   - 1137. n-th tribonacci number
   
