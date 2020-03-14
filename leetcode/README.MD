@@ -44,6 +44,7 @@
   - 0082. remove duplicates from sorted list II
   - 0083. remove duplicates from sorted list
   - 0086. partition list
+  - 0092. Reverse Linked List II
   - 0143. reorder list
   - 0148. sort list
   - 0206. reverse linked list
