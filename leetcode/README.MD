@@ -89,7 +89,8 @@
   - 0047. permutations-II
   - 0051. N-Queens
   - 0077. combinations
-
+  - 0078. Subsets
+  - 0090. Subsets II
 ### String
   - 0003. longest substring without repeating characters
   - 0014. longest common prefix
