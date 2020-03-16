@@ -93,6 +93,7 @@
 ### String
   - 0003. longest substring without repeating characters
   - 0014. longest common prefix
+  - 0038. Count and Say
   - 0049. group anagrams
   - 0058. length of last word
   - 0242. valid anagram
