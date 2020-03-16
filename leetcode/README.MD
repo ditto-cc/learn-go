@@ -66,7 +66,6 @@
   - 0042. trapping rain water
   - 0048. rotate image 
   - 0055. jump game
-  - 0066. Plus One
   - 0073. set matrix zeroes 
   - 0088. merge sorted array
   - 0169. majority element
@@ -114,8 +113,9 @@
 
 ### Math
   - 0007. reverse integer
-  - 0009. palindrome number 
-  - 0013. roman to integer 
+  - 0009. palindrome number
+  - 0013. roman to integer
+  - 0066. Plus One
   - 0461. hamming distance
   - 0829. consecutive numbers sum
   - 1342. number of steps to reduce a number to zero
