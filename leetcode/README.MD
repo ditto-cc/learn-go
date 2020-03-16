@@ -66,6 +66,7 @@
   - 0042. trapping rain water
   - 0048. rotate image 
   - 0055. jump game
+  - 0066. Plus One
   - 0073. set matrix zeroes 
   - 0088. merge sorted array
   - 0169. majority element
@@ -91,6 +92,7 @@
   - 0077. combinations
   - 0078. Subsets
   - 0090. Subsets II
+
 ### String
   - 0003. longest substring without repeating characters
   - 0014. longest common prefix
