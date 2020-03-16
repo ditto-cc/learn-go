@@ -116,6 +116,7 @@
   - 0009. palindrome number
   - 0013. roman to integer
   - 0066. Plus One
+  - 0067. Add Binary
   - 0461. hamming distance
   - 0829. consecutive numbers sum
   - 1342. number of steps to reduce a number to zero
