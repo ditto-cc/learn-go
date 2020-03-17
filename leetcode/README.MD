@@ -108,6 +108,7 @@
   - 0074. Search a 2D Matrix
   - 0994. rotting oranges
   - 1001. grid illumination
+  - 1160. Find Words That Can Be Formed by Characters
 
 ### Stack
   - 0020. valid parentheses
