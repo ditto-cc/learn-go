@@ -128,3 +128,7 @@
   - 0146. LRU Cache
   - 0705. Design HashSet
   - 0706. Design HashMap
+  
+### Sort
+  - 0056. Merge Intervals
+  - 0075. Sort Colors
