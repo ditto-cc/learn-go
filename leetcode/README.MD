@@ -126,3 +126,5 @@
 
 ### Design
   - 0146. LRU Cache
+  - 0705. Design HashSet
+  - 0706. Design HashMap
