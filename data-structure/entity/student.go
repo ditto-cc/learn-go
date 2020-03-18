@@ -2,7 +2,7 @@ package entity
 
 import (
 	"fmt"
-	"learn-go/data-structure-algrithom/data-structure/bst"
+	"learn-go/data-structure/bst"
 )
 
 type Student struct {

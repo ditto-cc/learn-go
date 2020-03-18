@@ -1,6 +1,6 @@
 package queue
 
-import linkedlist "learn-go/data-structure-algrithom/data-structure/linkedList"
+import linkedlist "learn-go/data-structure/linkedList"
 
 type ListQueue struct {
 	data *linkedlist.DLinkedList
