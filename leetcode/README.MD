@@ -120,6 +120,7 @@
   - 0013. roman to integer
   - 0066. Plus One
   - 0067. Add Binary
+  - 0089. Gray Code
   - 0461. hamming distance
   - 0829. consecutive numbers sum
   - 0836. Rectangle Overlap
