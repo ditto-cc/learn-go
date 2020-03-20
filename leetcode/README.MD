@@ -134,3 +134,6 @@
 ### Sort
   - 0056. Merge Intervals
   - 0075. Sort Colors
+
+### Heap
+  - 0347. Top K Frequent Elements
