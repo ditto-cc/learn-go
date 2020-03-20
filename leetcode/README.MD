@@ -136,4 +136,5 @@
   - 0075. Sort Colors
 
 ### Heap
+  - 0215. Kth Largest Element in an Array
   - 0347. Top K Frequent Elements
