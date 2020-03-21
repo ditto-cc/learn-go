@@ -5,6 +5,7 @@
   - 0063. unique paths II
   - 0064. minimum path sum 
   - 0070. climbing stairs
+  - 0072. Edit Distance
   - 0121. best time to buy and sell stock 
   - 0122. best time to buy and sell stock II
   - 0300. Longest Increasing Subsequence
