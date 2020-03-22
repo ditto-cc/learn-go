@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"learn-go/retriever/mock"
-	"learn-go/retriever/real"
+	"learn-go/learning/retriever/mock"
+	"learn-go/learning/retriever/real"
 	"time"
 )
 
@@ -39,7 +39,6 @@ func session(s Session) string {
 	})
 	return s.Get(url)
 }
-
 
 func inspect(r Retriever) {
 	fmt.Println("Inspecting", r)
