@@ -16,4 +16,6 @@
 #
 
 .idea
-
+.vscode
+fib.txt
+go.sum
