@@ -2,15 +2,12 @@ package bst
 
 import (
 	"fmt"
+	"learn-go/data-structure/compare"
 )
-
-type Comparable interface {
-	Compare(Comparable) int
-}
 
 // Node tree node
 type Node struct {
-	Val            Comparable
+	Val            compare.Comparable
 	Lchild, Rchild *Node
 }
 
@@ -21,7 +18,7 @@ type BSTree struct {
 }
 
 // CreateNode construct Node
-func CreateNode(Val Comparable) *Node {
+func CreateNode(Val compare.Comparable) *Node {
 	return &Node{Val: Val}
 }
 

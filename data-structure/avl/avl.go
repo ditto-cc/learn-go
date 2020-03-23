@@ -1,17 +1,16 @@
 package avl
 
 import (
+	"bytes"
 	"fmt"
+	"learn-go/data-structure/compare"
 )
-
-type Comparable interface {
-	Compare(Comparable) int
-}
 
 // Node tree node
 type Node struct {
-	Val            Comparable
-	BalanceFactor  int
+	Key            compare.Comparable
+	Val            interface{}
+	Height         int
 	Lchild, Rchild *Node
 }
 
@@ -22,12 +21,12 @@ type AVLTree struct {
 }
 
 // CreateNode construct Node
-func CreateNode(Val Comparable) *Node {
-	return &Node{Val: Val}
+func CreateNode(Val compare.Comparable) *Node {
+	return &Node{Key: Val}
 }
 
-// CreateBST construct BST
-func CreateBST() *AVLTree {
+// CreateAVL construct BST
+func CreateAVL() *AVLTree {
 	return &AVLTree{}
 }
 
@@ -35,9 +34,13 @@ func (avl *AVLTree) String() string {
 	if avl == nil || avl.root == nil {
 		return ""
 	}
-	var str string
-	height := avl.Height()
-	h := 0
+
+	space := ""
+	for l := len(fmt.Sprintf("%v-%v", avl.root.Key, avl.root.Val)); l > 0; l-- {
+		space += "_"
+	}
+
+	h, str, height := 0, bytes.Buffer{}, avl.Height()
 	q := []*Node{avl.root}
 	for len(q) > 0 {
 		levelNum := len(q)
@@ -46,10 +49,11 @@ func (avl *AVLTree) String() string {
 			front := q[0]
 			q = q[1:]
 			if front != nil {
-				str += fmt.Sprintf("%s", front.Val) + " "
+				str.WriteString(fmt.Sprintf("%v-%v", front.Key, front.Val))
 			} else {
-				str += "  "
+				str.WriteString(space)
 			}
+			str.WriteByte(' ')
 			if h != height {
 				if front == nil {
 					q = append(q, nil)
@@ -60,8 +64,8 @@ func (avl *AVLTree) String() string {
 				}
 			}
 		}
-		str += "\n"
+		str.WriteByte('\n')
 	}
 
-	return str
+	return str.String()
 }

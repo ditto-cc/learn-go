@@ -1,37 +1,39 @@
 package avl
 
-func (node *Node) inOrder(visit func(Comparable)) {
+import "learn-go/data-structure/compare"
+
+func (node *Node) inOrder(visit func(compare.Comparable, interface{})) {
 	if node == nil {
 		return
 	}
 
 	node.Lchild.inOrder(visit)
-	visit(node.Val)
+	visit(node.Key, node.Val)
 	node.Rchild.inOrder(visit)
 }
 
-func (node *Node) preOrder(visit func(Comparable)) {
+func (node *Node) preOrder(visit func(compare.Comparable, interface{})) {
 	if node == nil {
 		return
 	}
 
-	visit(node.Val)
-	node.Lchild.inOrder(visit)
-	node.Rchild.inOrder(visit)
+	visit(node.Key, node.Val)
+	node.Lchild.preOrder(visit)
+	node.Rchild.preOrder(visit)
 }
 
-func (node *Node) postOrder(visit func(Comparable)) {
+func (node *Node) postOrder(visit func(compare.Comparable, interface{})) {
 	if node == nil {
 		return
 	}
 
-	node.Lchild.inOrder(visit)
-	node.Rchild.inOrder(visit)
-	visit(node.Val)
+	node.Lchild.postOrder(visit)
+	node.Rchild.postOrder(visit)
+	visit(node.Key, node.Val)
 }
 
 // InOrder in-Order traverse
-func (bst *AVLTree) InOrder(visit func(Comparable)) {
+func (bst *AVLTree) InOrder(visit func(compare.Comparable, interface{})) {
 	if bst == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -40,7 +42,7 @@ func (bst *AVLTree) InOrder(visit func(Comparable)) {
 }
 
 // PreOrder pre-Order traverse
-func (bst *AVLTree) PreOrder(visit func(Comparable)) {
+func (bst *AVLTree) PreOrder(visit func(compare.Comparable, interface{})) {
 	if bst == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -49,7 +51,7 @@ func (bst *AVLTree) PreOrder(visit func(Comparable)) {
 }
 
 // PostOrder post-Order traverse
-func (bst *AVLTree) PostOrder(visit func(Comparable)) {
+func (bst *AVLTree) PostOrder(visit func(compare.Comparable, interface{})) {
 	if bst == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -57,7 +59,7 @@ func (bst *AVLTree) PostOrder(visit func(Comparable)) {
 	bst.root.postOrder(visit)
 }
 
-func (bst *AVLTree) InOrderNR(visit func(Comparable)) {
+func (bst *AVLTree) InOrderNR(visit func(compare.Comparable, interface{})) {
 	if bst == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -71,13 +73,13 @@ func (bst *AVLTree) InOrderNR(visit func(Comparable)) {
 		} else {
 			top := s[len(s)-1]
 			s = s[:len(s)-1]
-			visit(top.Val)
+			visit(top.Key, top.Val)
 			p = top.Rchild
 		}
 	}
 }
 
-func (bst *AVLTree) PreOrderNR(visit func(Comparable)) {
+func (bst *AVLTree) PreOrderNR(visit func(compare.Comparable, interface{})) {
 	if bst == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -88,7 +90,7 @@ func (bst *AVLTree) PreOrderNR(visit func(Comparable)) {
 	for len(s) > 0 {
 		top := s[len(s)-1]
 		s = s[:len(s)-1]
-		visit(top.Val)
+		visit(top.Key, top.Val)
 		if top.Rchild != nil {
 			s = append(s, top.Rchild)
 		}
@@ -98,7 +100,7 @@ func (bst *AVLTree) PreOrderNR(visit func(Comparable)) {
 	}
 }
 
-func (bst *AVLTree) PostOrderNR(visit func(Comparable)) {
+func (bst *AVLTree) PostOrderNR(visit func(compare.Comparable, interface{})) {
 	if bst == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -122,11 +124,11 @@ func (bst *AVLTree) PostOrderNR(visit func(Comparable)) {
 	for len(s2) > 0 {
 		top := s2[len(s2)-1]
 		s2 = s2[:len(s2)-1]
-		visit(top.Val)
+		visit(top.Key, top.Val)
 	}
 }
 
-func (bst *AVLTree) LevelOrder(visit func(Comparable)) {
+func (bst *AVLTree) LevelOrder(visit func(compare.Comparable, interface{})) {
 	if bst == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -138,7 +140,7 @@ func (bst *AVLTree) LevelOrder(visit func(Comparable)) {
 	for len(q) > 0 {
 		front := q[0]
 		q = q[1:]
-		visit(front.Val)
+		visit(front.Key, front.Val)
 		if front.Lchild != nil {
 			q = append(q, front.Lchild)
 		}
