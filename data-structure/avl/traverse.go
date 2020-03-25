@@ -33,39 +33,39 @@ func (node *Node) postOrder(visit func(compare.Comparable, interface{})) {
 }
 
 // InOrder in-Order traverse
-func (bst *AVLTree) InOrder(visit func(compare.Comparable, interface{})) {
-	if bst == nil {
+func (avl *AVLTree) InOrder(visit func(compare.Comparable, interface{})) {
+	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
 
-	bst.root.inOrder(visit)
+	avl.root.inOrder(visit)
 }
 
 // PreOrder pre-Order traverse
-func (bst *AVLTree) PreOrder(visit func(compare.Comparable, interface{})) {
-	if bst == nil {
+func (avl *AVLTree) PreOrder(visit func(compare.Comparable, interface{})) {
+	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
 
-	bst.root.preOrder(visit)
+	avl.root.preOrder(visit)
 }
 
 // PostOrder post-Order traverse
-func (bst *AVLTree) PostOrder(visit func(compare.Comparable, interface{})) {
-	if bst == nil {
+func (avl *AVLTree) PostOrder(visit func(compare.Comparable, interface{})) {
+	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
 
-	bst.root.postOrder(visit)
+	avl.root.postOrder(visit)
 }
 
-func (bst *AVLTree) InOrderNR(visit func(compare.Comparable, interface{})) {
-	if bst == nil {
+func (avl *AVLTree) InOrderNR(visit func(compare.Comparable, interface{})) {
+	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
 
 	s := []*Node{}
-	p := bst.root
+	p := avl.root
 	for len(s) > 0 || p != nil {
 		if p != nil {
 			s = append(s, p)
@@ -79,14 +79,14 @@ func (bst *AVLTree) InOrderNR(visit func(compare.Comparable, interface{})) {
 	}
 }
 
-func (bst *AVLTree) PreOrderNR(visit func(compare.Comparable, interface{})) {
-	if bst == nil {
+func (avl *AVLTree) PreOrderNR(visit func(compare.Comparable, interface{})) {
+	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
-	if bst.root == nil {
+	if avl.root == nil {
 		return
 	}
-	s := []*Node{bst.root}
+	s := []*Node{avl.root}
 	for len(s) > 0 {
 		top := s[len(s)-1]
 		s = s[:len(s)-1]
@@ -100,14 +100,14 @@ func (bst *AVLTree) PreOrderNR(visit func(compare.Comparable, interface{})) {
 	}
 }
 
-func (bst *AVLTree) PostOrderNR(visit func(compare.Comparable, interface{})) {
-	if bst == nil {
+func (avl *AVLTree) PostOrderNR(visit func(compare.Comparable, interface{})) {
+	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
-	if bst.root == nil {
+	if avl.root == nil {
 		return
 	}
-	s1 := []*Node{bst.root}
+	s1 := []*Node{avl.root}
 	s2 := []*Node{}
 	for len(s1) > 0 {
 		top := s1[len(s1)-1]
@@ -128,15 +128,15 @@ func (bst *AVLTree) PostOrderNR(visit func(compare.Comparable, interface{})) {
 	}
 }
 
-func (bst *AVLTree) LevelOrder(visit func(compare.Comparable, interface{})) {
-	if bst == nil {
+func (avl *AVLTree) LevelOrder(visit func(compare.Comparable, interface{})) {
+	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
-	if bst.root == nil {
+	if avl.root == nil {
 		return
 	}
 	q := []*Node{}
-	q = append(q, bst.root)
+	q = append(q, avl.root)
 	for len(q) > 0 {
 		front := q[0]
 		q = q[1:]
