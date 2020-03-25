@@ -74,6 +74,7 @@
   - 0169. majority element
   - 0695. Max Area of Island
   - 0807. max increase to keep city skyline
+  - 0892. Surface Area of 3D Shapes
   - 0945. Minimum Increment to Make Array Unique
   - 1010. pairs of songs with total durations divisible by 60
   - 1013. partition array into three parts with equal sum
