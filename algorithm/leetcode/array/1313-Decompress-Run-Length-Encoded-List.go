@@ -39,11 +39,9 @@ func decompressRLElist(nums []int) []int {
 	res := make([]int, 0)
 	for i, first := 0, 0; first < n; i, first = i+1, (i+1)<<1 {
 		count, num := nums[first], nums[first+1]
-		temp := make([]int, count)
-		for i := range temp {
-			temp[i] = num
+		for ; count > 0; count-- {
+			res = append(res, num)
 		}
-		res = append(res, temp...)
 	}
 	return res
 }
