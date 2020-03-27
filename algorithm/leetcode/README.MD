@@ -76,6 +76,7 @@
   - 0695. Max Area of Island
   - 0807. max increase to keep city skyline
   - 0892. Surface Area of 3D Shapes
+  - 0914. X of a Kind in a Deck of Cards
   - 0945. Minimum Increment to Make Array Unique
   - 0999. Available Captures for Rook
   - 1010. pairs of songs with total durations divisible by 60
