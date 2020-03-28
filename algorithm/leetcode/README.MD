@@ -72,16 +72,20 @@
   - 0073. set matrix zeroes 
   - 0088. merge sorted array
   - 0169. majority element
+  - 0566. Reshape the Matrix
   - 0695. Max Area of Island
   - 0807. max increase to keep city skyline
   - 0892. Surface Area of 3D Shapes
+  - 0914. X of a Kind in a Deck of Cards
   - 0945. Minimum Increment to Make Array Unique
+  - 0999. Available Captures for Rook
   - 1010. pairs of songs with total durations divisible by 60
   - 1013. partition array into three parts with equal sum
   - 1103. distribute candies to people
   - 1295. find numbers with even number of digits 
   - 1001. grid illumination
   - 1266. Minimum Time Visiting All Points
+  - 1313. Decompress Run-Length Encoded List
   - 1365. how many numbers are smaller than the current number
 
 ### Backtracking
