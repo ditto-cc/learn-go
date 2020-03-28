@@ -107,6 +107,7 @@
   - 0242. valid anagram
   - 0409. Longest Palindrome
   - 0771. jewels and stones
+  - 0820. Short Encoding of Words
   - 1071. greatest common divisor of strings
   - 1374. generate a string with characters that have odd counts
 
