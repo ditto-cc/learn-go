@@ -3,9 +3,9 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"learn-go/data-structure/avl"
 	"learn-go/data-structure/compare"
 	"learn-go/data-structure/heap"
+	"learn-go/data-structure/tree/avl"
 	"os"
 	"strconv"
 	"strings"

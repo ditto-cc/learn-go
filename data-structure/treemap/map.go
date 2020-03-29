@@ -1,8 +1,8 @@
 package treemap
 
 import (
-	"learn-go/data-structure/avl"
 	"learn-go/data-structure/compare"
+	"learn-go/data-structure/tree/avl"
 )
 
 type TreeMap struct {

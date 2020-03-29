@@ -2,8 +2,8 @@ package entity
 
 import (
 	"fmt"
-	"learn-go/data-structure/avl"
-	"learn-go/data-structure/bst"
+	"learn-go/data-structure/tree/avl"
+	"learn-go/data-structure/tree/bst"
 )
 
 type Student struct {

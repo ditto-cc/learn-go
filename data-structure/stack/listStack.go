@@ -1,6 +1,6 @@
 package stack
 
-import linkedlist "learn-go/data-structure/linkedList"
+import linkedlist "learn-go/data-structure/list"
 
 type ListStack struct {
 	data *linkedlist.LinkedList
