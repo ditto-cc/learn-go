@@ -17,5 +17,5 @@ type Node struct {
 }
 
 func NewNode() *Node {
-	return &Node{}
+	return &Node{next: map[rune]*Node{}}
 }

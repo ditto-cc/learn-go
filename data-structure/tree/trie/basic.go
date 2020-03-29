@@ -25,7 +25,7 @@ func (t *Trie) Search(word string) bool {
 
 func (t *Trie) IsPrefix(prefix string) bool {
 	p := t.root
-	for _, c := range word {
+	for _, c := range prefix {
 		if _, ok := p.next[c]; !ok {
 			return false
 		}
@@ -50,9 +50,13 @@ func (node *Node) match(pattern string, i int) bool {
 			}
 		}
 	} else {
-		if _, ok := node.next[rune(pattern[i])]; ok {
-			return node.next[rune(pattern[i])].match(pattern, i+1)
+		if next, ok := node.next[rune(pattern[i])]; ok {
+			return next.match(pattern, i+1)
 		}
 	}
 	return false
+}
+
+func (t *Trie) Size() int {
+	return t.size
 }

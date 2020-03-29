@@ -1,6 +1,9 @@
 package stack
 
-import "fmt"
+import (
+	"bytes"
+	"fmt"
+)
 
 type ArrayStack struct {
 	data []interface{}
@@ -40,12 +43,13 @@ func (s *ArrayStack) Top() interface{} {
 }
 
 func (s *ArrayStack) String() string {
-	str := "Bottom["
+	str := bytes.NewBufferString("Bottom[")
 	for i := 0; i < s.Size(); i++ {
-		str += fmt.Sprintf("%v", s.data[i])
+		str.WriteString(fmt.Sprintf("%v", s.data[i]))
 		if i != s.Size()-1 {
-			str += ", "
+			str.Write([]byte{',', ' '})
 		}
 	}
-	return str + "]Top"
+	str.WriteString("]Top")
+	return str.String()
 }

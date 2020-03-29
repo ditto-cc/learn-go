@@ -1,23 +1,25 @@
 package heap
 
-import "learn-go/data-structure/compare"
+import (
+	"learn-go/data-structure/utils"
+)
 
 type Heap struct {
-	data []compare.Comparable
+	data []utils.Comparable
 	size int
 }
 
 func CreateHeap() *Heap {
-	return &Heap{data: []compare.Comparable{}}
+	return &Heap{data: []utils.Comparable{}}
 }
 
-func (h *Heap) Push(e compare.Comparable) {
+func (h *Heap) Push(e utils.Comparable) {
 	h.data = append(h.data, e)
 	h.size++
 	h.up(h.Size() - 1)
 }
 
-func (h *Heap) Pop() compare.Comparable {
+func (h *Heap) Pop() utils.Comparable {
 	if h.Size() == 0 {
 		return nil
 	}
@@ -30,7 +32,7 @@ func (h *Heap) Pop() compare.Comparable {
 	return ret
 }
 
-func (h *Heap) First() compare.Comparable {
+func (h *Heap) First() utils.Comparable {
 	if h.Size() == 0 {
 		return nil
 	}

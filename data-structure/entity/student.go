@@ -2,8 +2,7 @@ package entity
 
 import (
 	"fmt"
-	"learn-go/data-structure/tree/avl"
-	"learn-go/data-structure/tree/bst"
+	"learn-go/data-structure/utils"
 )
 
 type Student struct {
@@ -27,15 +26,7 @@ func compare(a, b *Student) int {
 	return res
 }
 
-func (a *Student) CompareAVL(b avl.Comparable) int {
-	if c, ok := b.(*Student); ok {
-		return compare(a, c)
-	} else {
-		panic("Student Type Assertion Failed.")
-	}
-}
-
-func (a *Student) CompareBST(b bst.Comparable) int {
+func (a *Student) Compare(b utils.Comparable) int {
 	if c, ok := b.(*Student); ok {
 		return compare(a, c)
 	} else {

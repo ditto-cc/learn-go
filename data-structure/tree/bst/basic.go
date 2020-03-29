@@ -1,11 +1,10 @@
 package bst
 
 import (
-	"learn-go/data-structure/compare"
 	"learn-go/data-structure/utils"
 )
 
-func (node *Node) add(e compare.Comparable) *Node {
+func (node *Node) add(e utils.Comparable) *Node {
 	if node == nil {
 		return CreateNode(e)
 	}
@@ -19,7 +18,7 @@ func (node *Node) add(e compare.Comparable) *Node {
 }
 
 // Add element to BSTree
-func (bst *BSTree) Add(e compare.Comparable) {
+func (bst *BSTree) Add(e utils.Comparable) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -27,7 +26,7 @@ func (bst *BSTree) Add(e compare.Comparable) {
 	bst.size++
 }
 
-func (node *Node) getNode(e compare.Comparable) *Node {
+func (node *Node) getNode(e utils.Comparable) *Node {
 	if node == nil {
 		return nil
 	}
@@ -65,7 +64,7 @@ func (node *Node) removeMax(maxNode *Node) *Node {
 	return node
 }
 
-func (bst *BSTree) RemoveMin() compare.Comparable {
+func (bst *BSTree) RemoveMin() utils.Comparable {
 	if bst == nil {
 		panic("nil BSTree.")
 	}
@@ -79,7 +78,7 @@ func (bst *BSTree) RemoveMin() compare.Comparable {
 	return nil
 }
 
-func (bst *BSTree) RemoveMax() compare.Comparable {
+func (bst *BSTree) RemoveMax() utils.Comparable {
 	if bst == nil {
 		panic("nil BSTree.")
 	}
@@ -93,7 +92,7 @@ func (bst *BSTree) RemoveMax() compare.Comparable {
 	return nil
 }
 
-func (node *Node) remove(e compare.Comparable) *Node {
+func (node *Node) remove(e utils.Comparable) *Node {
 	if node == nil {
 		return nil
 	}
@@ -120,7 +119,7 @@ func (node *Node) remove(e compare.Comparable) *Node {
 	return retNode
 }
 
-func (bst *BSTree) Remove(e compare.Comparable) {
+func (bst *BSTree) Remove(e utils.Comparable) {
 	if bst == nil {
 		panic("nil BSTree.")
 	}
@@ -129,7 +128,7 @@ func (bst *BSTree) Remove(e compare.Comparable) {
 	bst.size--
 }
 
-func (bst *BSTree) Contains(e compare.Comparable) bool {
+func (bst *BSTree) Contains(e utils.Comparable) bool {
 	if bst == nil {
 		return false
 	}

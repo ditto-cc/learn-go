@@ -1,6 +1,7 @@
 package linkedlist
 
 import (
+	"bytes"
 	"fmt"
 )
 
@@ -101,12 +102,13 @@ func (list *DLinkedList) Size() int {
 }
 
 func (list *DLinkedList) String() string {
-	str := "["
+	res := bytes.NewBuffer([]byte{'['})
 	for p := list.head.Next; p != list.head; p = p.Next {
-		str += fmt.Sprintf("%v", p.Val)
+		res.WriteString(fmt.Sprintf("%v", p.Val))
 		if list.head != p.Next {
-			str += "<->"
+			res.Write([]byte{'<', '-', '>'})
 		}
 	}
-	return str + "]"
+	res.WriteByte(']')
+	return res.String()
 }

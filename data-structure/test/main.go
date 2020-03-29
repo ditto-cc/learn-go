@@ -3,11 +3,10 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"learn-go/data-structure/compare"
-	"learn-go/data-structure/heap"
+	"learn-go/data-structure/deque"
 	"learn-go/data-structure/tree/avl"
+	"learn-go/data-structure/utils"
 	"os"
-	"strconv"
 	"strings"
 )
 
@@ -17,7 +16,7 @@ func (w *Word) String() string {
 	return string(*w)
 }
 
-func (w1 *Word) Compare(w compare.Comparable) int {
+func (w1 *Word) Compare(w utils.Comparable) int {
 	w2 := w.(*Word)
 	s1, s2 := string(*w1), string(*w2)
 	if s1 == s2 {
@@ -52,50 +51,37 @@ func readFile(filename string, tree *avl.AVLTree) {
 	}
 }
 
-type WordFre struct {
-	word *Word
-	fre  int
-}
-
-func (w1 *WordFre) Compare(t compare.Comparable) int {
-	w2, ok := t.(*WordFre)
-	if !ok {
-		panic("Type Assertion Failed.")
-	}
-
-	res := w1.fre - w2.fre
-	if res == 0 {
-		if w1.word.String() == w2.word.String() {
-			return 0
-		} else if w1.word.String() > w2.word.String() {
-			return -1
-		} else {
-			return 1
-		}
-	}
-	return res
-}
-
-func (w *WordFre) String() string {
-	return w.word.String() + " " + strconv.Itoa(w.fre)
-}
-
 func main() {
-	tree := avl.CreateAVL()
+	//avlTree := avl.CreateAVL()
+	//readFile("The-catcher-in-the-Rye.txt", avlTree)
+	//
+	//trieTree := trie.NewTrie()
+	//avlTree.InOrder(func(w compare.Comparable, fre interface{}) {
+	//	trieTree.Add(w.(*Word).String())
+	//})
+	//
+	//fmt.Println(trieTree.Size())
+	//fmt.Println(trieTree.Search("funny"))
+	//fmt.Println(trieTree.Match("f..ny"))
+	//fmt.Println(trieTree.Match("f..k"))
 
-	readFile("The-catcher-in-the-Rye.txt", tree)
-
-	h := heap.CreateHeap()
-	fmt.Println(tree.Size())
-	tree.InOrder(func(w compare.Comparable, fre interface{}) {
-		h.Push(&WordFre{word: w.(*Word), fre: fre.(int)})
-		if h.Size() > 10 {
-			h.Pop()
+	q := deque.NewDeque(10)
+	fmt.Println("Starting Pushing...")
+	for i := 0; i < 100; i++ {
+		if i%3 == 0 {
+			q.PushBack(i)
+		} else {
+			q.PushFront(i)
 		}
-	})
-
-	for h.Size() > 0 {
-		fmt.Println(h.Pop())
+		fmt.Println(q)
 	}
-
+	fmt.Println("\nStarting Popping...")
+	for i := 0; i < 100; i++ {
+		if i%4 == 0 {
+			q.PopLeft()
+		} else {
+			q.PopRight()
+		}
+		fmt.Println(q)
+	}
 }

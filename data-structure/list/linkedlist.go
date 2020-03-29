@@ -1,6 +1,9 @@
 package linkedlist
 
-import "fmt"
+import (
+	"bytes"
+	"fmt"
+)
 
 type ListNode struct {
 	Val  interface{}
@@ -96,12 +99,13 @@ func (list *LinkedList) Get(i int) interface{} {
 }
 
 func (list *LinkedList) String() string {
-	str := "["
+	res := bytes.NewBuffer([]byte{'['})
 	for p := list.head.Next; p != nil; p = p.Next {
-		str += fmt.Sprintf("%v", p.Val)
+		res.WriteString(fmt.Sprintf("%v", p.Val))
 		if p.Next != nil {
-			str += "->"
+			res.Write([]byte{'-', '>'})
 		}
 	}
-	return str + "]"
+	res.WriteByte(']')
+	return res.String()
 }

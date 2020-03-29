@@ -1,8 +1,10 @@
 package avl
 
-import "learn-go/data-structure/compare"
+import (
+	"learn-go/data-structure/utils"
+)
 
-func (node *Node) inOrder(visit func(compare.Comparable, interface{})) {
+func (node *Node) inOrder(visit func(utils.Comparable, interface{})) {
 	if node == nil {
 		return
 	}
@@ -12,7 +14,7 @@ func (node *Node) inOrder(visit func(compare.Comparable, interface{})) {
 	node.Rchild.inOrder(visit)
 }
 
-func (node *Node) preOrder(visit func(compare.Comparable, interface{})) {
+func (node *Node) preOrder(visit func(utils.Comparable, interface{})) {
 	if node == nil {
 		return
 	}
@@ -22,7 +24,7 @@ func (node *Node) preOrder(visit func(compare.Comparable, interface{})) {
 	node.Rchild.preOrder(visit)
 }
 
-func (node *Node) postOrder(visit func(compare.Comparable, interface{})) {
+func (node *Node) postOrder(visit func(utils.Comparable, interface{})) {
 	if node == nil {
 		return
 	}
@@ -33,7 +35,7 @@ func (node *Node) postOrder(visit func(compare.Comparable, interface{})) {
 }
 
 // InOrder in-Order traverse
-func (avl *AVLTree) InOrder(visit func(compare.Comparable, interface{})) {
+func (avl *AVLTree) InOrder(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -42,7 +44,7 @@ func (avl *AVLTree) InOrder(visit func(compare.Comparable, interface{})) {
 }
 
 // PreOrder pre-Order traverse
-func (avl *AVLTree) PreOrder(visit func(compare.Comparable, interface{})) {
+func (avl *AVLTree) PreOrder(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -51,7 +53,7 @@ func (avl *AVLTree) PreOrder(visit func(compare.Comparable, interface{})) {
 }
 
 // PostOrder post-Order traverse
-func (avl *AVLTree) PostOrder(visit func(compare.Comparable, interface{})) {
+func (avl *AVLTree) PostOrder(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -59,7 +61,7 @@ func (avl *AVLTree) PostOrder(visit func(compare.Comparable, interface{})) {
 	avl.root.postOrder(visit)
 }
 
-func (avl *AVLTree) InOrderNR(visit func(compare.Comparable, interface{})) {
+func (avl *AVLTree) InOrderNR(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -79,7 +81,7 @@ func (avl *AVLTree) InOrderNR(visit func(compare.Comparable, interface{})) {
 	}
 }
 
-func (avl *AVLTree) PreOrderNR(visit func(compare.Comparable, interface{})) {
+func (avl *AVLTree) PreOrderNR(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -100,7 +102,7 @@ func (avl *AVLTree) PreOrderNR(visit func(compare.Comparable, interface{})) {
 	}
 }
 
-func (avl *AVLTree) PostOrderNR(visit func(compare.Comparable, interface{})) {
+func (avl *AVLTree) PostOrderNR(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -128,7 +130,7 @@ func (avl *AVLTree) PostOrderNR(visit func(compare.Comparable, interface{})) {
 	}
 }
 
-func (avl *AVLTree) LevelOrder(visit func(compare.Comparable, interface{})) {
+func (avl *AVLTree) LevelOrder(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}

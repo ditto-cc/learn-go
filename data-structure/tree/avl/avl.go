@@ -3,12 +3,12 @@ package avl
 import (
 	"bytes"
 	"fmt"
-	"learn-go/data-structure/compare"
+	"learn-go/data-structure/utils"
 )
 
 // Node tree node
 type Node struct {
-	Key            compare.Comparable
+	Key            utils.Comparable
 	Val            interface{}
 	Height         int
 	Lchild, Rchild *Node
@@ -21,7 +21,7 @@ type AVLTree struct {
 }
 
 // CreateNode construct Node
-func CreateNode(Val compare.Comparable) *Node {
+func CreateNode(Val utils.Comparable) *Node {
 	return &Node{Key: Val}
 }
 

@@ -1,6 +1,7 @@
 package queue
 
 import (
+	"bytes"
 	"fmt"
 )
 
@@ -42,12 +43,13 @@ func (q *ArrayQueue) Dequeue() interface{} {
 }
 
 func (q *ArrayQueue) String() string {
-	str := "Head["
+	str := bytes.NewBufferString("Head[")
 	for i, e := range q.data {
-		str += fmt.Sprintf("%v", e)
+		str.WriteString(fmt.Sprintf("%v", e))
 		if i != q.Size()-1 {
-			str += ", "
+			str.Write([]byte{',', ' '})
 		}
 	}
-	return str + "]Tail"
+	str.WriteString("]Tail")
+	return str.String()
 }

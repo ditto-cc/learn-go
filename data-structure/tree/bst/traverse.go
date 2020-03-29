@@ -1,8 +1,10 @@
 package bst
 
-import "learn-go/data-structure/compare"
+import (
+	"learn-go/data-structure/utils"
+)
 
-func (node *Node) inOrder(visit func(compare.Comparable)) {
+func (node *Node) inOrder(visit func(utils.Comparable)) {
 	if node == nil {
 		return
 	}
@@ -12,7 +14,7 @@ func (node *Node) inOrder(visit func(compare.Comparable)) {
 	node.Rchild.inOrder(visit)
 }
 
-func (node *Node) preOrder(visit func(compare.Comparable)) {
+func (node *Node) preOrder(visit func(utils.Comparable)) {
 	if node == nil {
 		return
 	}
@@ -22,7 +24,7 @@ func (node *Node) preOrder(visit func(compare.Comparable)) {
 	node.Rchild.preOrder(visit)
 }
 
-func (node *Node) postOrder(visit func(compare.Comparable)) {
+func (node *Node) postOrder(visit func(utils.Comparable)) {
 	if node == nil {
 		return
 	}
@@ -33,7 +35,7 @@ func (node *Node) postOrder(visit func(compare.Comparable)) {
 }
 
 // InOrder in-Order traverse
-func (bst *BSTree) InOrder(visit func(compare.Comparable)) {
+func (bst *BSTree) InOrder(visit func(utils.Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -42,7 +44,7 @@ func (bst *BSTree) InOrder(visit func(compare.Comparable)) {
 }
 
 // PreOrder pre-Order traverse
-func (bst *BSTree) PreOrder(visit func(compare.Comparable)) {
+func (bst *BSTree) PreOrder(visit func(utils.Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -51,7 +53,7 @@ func (bst *BSTree) PreOrder(visit func(compare.Comparable)) {
 }
 
 // PostOrder post-Order traverse
-func (bst *BSTree) PostOrder(visit func(compare.Comparable)) {
+func (bst *BSTree) PostOrder(visit func(utils.Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -59,7 +61,7 @@ func (bst *BSTree) PostOrder(visit func(compare.Comparable)) {
 	bst.root.postOrder(visit)
 }
 
-func (bst *BSTree) InOrderNR(visit func(compare.Comparable)) {
+func (bst *BSTree) InOrderNR(visit func(utils.Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -79,7 +81,7 @@ func (bst *BSTree) InOrderNR(visit func(compare.Comparable)) {
 	}
 }
 
-func (bst *BSTree) PreOrderNR(visit func(compare.Comparable)) {
+func (bst *BSTree) PreOrderNR(visit func(utils.Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -100,7 +102,7 @@ func (bst *BSTree) PreOrderNR(visit func(compare.Comparable)) {
 	}
 }
 
-func (bst *BSTree) PostOrderNR(visit func(compare.Comparable)) {
+func (bst *BSTree) PostOrderNR(visit func(utils.Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}
@@ -128,7 +130,7 @@ func (bst *BSTree) PostOrderNR(visit func(compare.Comparable)) {
 	}
 }
 
-func (bst *BSTree) LevelOrder(visit func(compare.Comparable)) {
+func (bst *BSTree) LevelOrder(visit func(utils.Comparable)) {
 	if bst == nil {
 		panic("nil BSTree. Error.")
 	}

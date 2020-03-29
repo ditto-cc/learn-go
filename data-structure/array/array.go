@@ -1,6 +1,9 @@
 package array
 
-import "strconv"
+import (
+	"bytes"
+	"fmt"
+)
 
 // Array array struct
 type Array struct {
@@ -17,12 +20,14 @@ func CreateArray(cap int) *Array {
 }
 
 func (arr *Array) String() string {
-	str := "cap=" + strconv.Itoa(cap(arr.data)) + ", size=" + strconv.Itoa(arr.size) + "\n["
+	res := bytes.NewBuffer([]byte{'['})
+	res.WriteString(fmt.Sprintf("cap=%v, size=%v\n", cap(arr.data), arr.size))
 	for i := 0; i < arr.size; i++ {
-		str += strconv.Itoa(arr.data[i])
+		res.WriteString(fmt.Sprintf("%v", arr.data[i]))
 		if i != arr.size-1 {
-			str += ", "
+			res.Write([]byte{',', ' '})
 		}
 	}
-	return str + "]"
+	res.WriteByte(']')
+	return res.String()
 }

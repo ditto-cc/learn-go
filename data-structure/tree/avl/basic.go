@@ -1,7 +1,6 @@
 package avl
 
 import (
-	"learn-go/data-structure/compare"
 	"learn-go/data-structure/utils"
 )
 
@@ -82,7 +81,7 @@ func (node *Node) rotate() *Node {
 	return node
 }
 
-func (node *Node) add(key compare.Comparable, val interface{}) *Node {
+func (node *Node) add(key utils.Comparable, val interface{}) *Node {
 	if node == nil {
 		return &Node{Key: key, Val: val, Height: 1}
 	}
@@ -96,7 +95,7 @@ func (node *Node) add(key compare.Comparable, val interface{}) *Node {
 	return node.rotate()
 }
 
-func (avl *AVLTree) Add(key compare.Comparable, val interface{}) {
+func (avl *AVLTree) Add(key utils.Comparable, val interface{}) {
 	if node := avl.root.getNode(key); node != nil {
 		node.Val = val
 	} else {
@@ -105,7 +104,7 @@ func (avl *AVLTree) Add(key compare.Comparable, val interface{}) {
 	}
 }
 
-func (node *Node) getNode(key compare.Comparable) *Node {
+func (node *Node) getNode(key utils.Comparable) *Node {
 	if node == nil {
 		return nil
 	}
@@ -177,7 +176,7 @@ func (avl *AVLTree) RemoveMax() interface{} {
 	return maxNode.Val
 }
 
-func (node *Node) remove(key compare.Comparable) *Node {
+func (node *Node) remove(key utils.Comparable) *Node {
 	if node == nil {
 		return nil
 	}
@@ -205,7 +204,7 @@ func (node *Node) remove(key compare.Comparable) *Node {
 	return retNode.rotate()
 }
 
-func (avl *AVLTree) Remove(key compare.Comparable) interface{} {
+func (avl *AVLTree) Remove(key utils.Comparable) interface{} {
 	if avl == nil {
 		panic("nil AVLTree.")
 	}
@@ -218,14 +217,14 @@ func (avl *AVLTree) Remove(key compare.Comparable) interface{} {
 	}
 }
 
-func (avl *AVLTree) Contains(key compare.Comparable) bool {
+func (avl *AVLTree) Contains(key utils.Comparable) bool {
 	if avl == nil {
 		panic("nil AVLTree.")
 	}
 	return avl.root.getNode(key) != nil
 }
 
-func (avl *AVLTree) Get(key compare.Comparable) interface{} {
+func (avl *AVLTree) Get(key utils.Comparable) interface{} {
 	if avl == nil {
 		panic("nil AVLTree.")
 	}
@@ -236,7 +235,7 @@ func (avl *AVLTree) Get(key compare.Comparable) interface{} {
 	return nil
 }
 
-func (avl *AVLTree) Set(key compare.Comparable, val interface{}) bool {
+func (avl *AVLTree) Set(key utils.Comparable, val interface{}) bool {
 	if avl == nil {
 		panic("nil Tree")
 	}
