@@ -121,6 +121,7 @@
   - 0994. rotting oranges
   - 1001. grid illumination
   - 1160. Find Words That Can Be Formed by Characters
+  - 1162. As Far from Land as Possible
 
 ### Stack
   - 0020. valid parentheses
