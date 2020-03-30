@@ -148,6 +148,7 @@
 ### Sort
   - 0056. Merge Intervals
   - 0075. Sort Colors
+  - 0912. Sort an Array
 
 ### Heap
   - 0215. Kth Largest Element in an Array
