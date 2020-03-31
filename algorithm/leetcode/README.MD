@@ -27,6 +27,7 @@
   - 0104. maximum depth of binary tree
   - 0105. construct binary tree from preorder and inorder traversal
   - 0113. path sum II
+  - 0114. Flatten Binary Tree to Linked List
   - 0173. binary search tree iterator
   - 0226. invert binary tree
   - 0654. maximum binary tree
