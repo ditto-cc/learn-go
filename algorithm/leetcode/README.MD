@@ -136,6 +136,7 @@
   - 0066. Plus One
   - 0067. Add Binary
   - 0089. Gray Code
+  - 0179. Largest Number
   - 0365. Water and Jug Problem
   - 0461. hamming distance
   - 0829. consecutive numbers sum
