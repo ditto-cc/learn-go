@@ -73,6 +73,7 @@
   - 0073. set matrix zeroes 
   - 0088. merge sorted array
   - 0169. majority element
+  - 0289. Game of Life
   - 0566. Reshape the Matrix
   - 0695. Max Area of Island
   - 0807. max increase to keep city skyline
