@@ -134,6 +134,7 @@
   - 0007. reverse integer
   - 0009. palindrome number
   - 0013. roman to integer
+  - 0050. Pow
   - 0066. Plus One
   - 0067. Add Binary
   - 0089. Gray Code
