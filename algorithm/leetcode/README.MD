@@ -106,6 +106,7 @@
 ### String
   - 0003. longest substring without repeating characters
   - 0006. ZigZag Conversion
+  - 0008. String to Integer (atoi)
   - 0014. longest common prefix
   - 0038. Count and Say
   - 0049. group anagrams
