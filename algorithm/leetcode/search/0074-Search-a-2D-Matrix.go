@@ -29,7 +29,7 @@ Output: false
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/search-a-2d-matrix
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 
 func searchMatrix(matrix [][]int, target int) bool {
 	if len(matrix) == 0 || len(matrix[0]) == 0 {
@@ -41,9 +41,9 @@ func searchMatrix(matrix [][]int, target int) bool {
 			return true
 		} else if matrix[i][j] > target {
 			i--
-		} else [
+		} else {
 			j++
-		]
+		}
 	}
 	return false
 }
