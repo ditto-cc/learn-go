@@ -36,11 +36,29 @@ Note:
 */
 
 func fib(N int) int {
-	pre, cur, next := 0, 1, 1
-	for ; N > 0; N-- {
-		next = pre + cur
-		pre = cur
-		cur = next
+	//pre, cur, next := 0, 1, 1
+	//for ; N > 0; N-- {
+	//	next = pre + cur
+	//	pre = cur
+	//	cur = next
+	//}
+	//return pre
+
+	res, matrix := [][]int{{1, 0}, {0, 1}}, [][]int{{1, 1}, {1, 0}}
+	for N--; N > 0; N >>= 1 {
+		if N&1 == 1 {
+			res = matrixProduct(res, matrix)
+		}
+		matrix = matrixProduct(matrix, matrix)
 	}
-	return pre
+	return res[0][0]
+}
+
+func matrixProduct(a, b [][]int) [][]int {
+	res := [][]int{{0, 0}, {0, 0}}
+	res[0][0] = a[0][0]*b[0][0] + a[0][1]*b[1][0]
+	res[0][1] = a[0][0]*b[0][1] + a[0][1]*b[1][1]
+	res[1][0] = a[1][0]*b[0][0] + a[1][1]*b[1][0]
+	res[1][1] = a[1][1]*b[1][1] + a[1][0]*b[0][1]
+	return res
 }
