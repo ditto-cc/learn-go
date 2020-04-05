@@ -151,6 +151,7 @@
 ### Design
   - 0146. LRU Cache
   - 0225. Implement Stack using Queues
+  - 0460. LFU Cache
   - 0705. Design HashSet
   - 0706. Design HashMap
   
