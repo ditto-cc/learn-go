@@ -115,6 +115,7 @@
   - 0076. Minimum Window Substring
   - 0242. valid anagram
   - 0409. Longest Palindrome
+  - 0648. Replace Words
   - 0771. jewels and stones
   - 0820. Short Encoding of Words
   - 1071. greatest common divisor of strings
