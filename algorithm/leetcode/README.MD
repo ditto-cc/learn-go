@@ -116,6 +116,7 @@
   - 0076-Minimum Window Substring
   - 0242-valid anagram
   - 0409-Longest Palindrome
+  - 0459-Repeated Substring Pattern
   - 0648-Replace Words
   - 0771-jewels and stones
   - 0820-Short Encoding of Words
