@@ -146,7 +146,7 @@ func (node *Node) height() int {
 		return 0
 	}
 
-	return 1 + utils.Max(node.Lchild.height(), node.Rchild.height())
+	return 1 + utils.MaxInt(node.Lchild.height(), node.Rchild.height())
 }
 
 func (bst *BSTree) Height() int {

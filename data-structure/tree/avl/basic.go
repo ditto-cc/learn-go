@@ -34,8 +34,8 @@ func (node *Node) leftRotate() *Node {
 	node.Rchild = rc.Lchild
 	rc.Lchild = node
 
-	node.Height = 1 + utils.Max(node.Lchild.height(), node.Rchild.height())
-	rc.Height = 1 + utils.Max(rc.Lchild.height(), rc.Rchild.height())
+	node.Height = 1 + utils.MaxInt(node.Lchild.height(), node.Rchild.height())
+	rc.Height = 1 + utils.MaxInt(rc.Lchild.height(), rc.Rchild.height())
 	return rc
 }
 
@@ -48,8 +48,8 @@ func (node *Node) rightRotate() *Node {
 	node.Lchild = lc.Rchild
 	lc.Rchild = node
 
-	node.Height = 1 + utils.Max(node.Lchild.height(), node.Rchild.height())
-	lc.Height = 1 + utils.Max(lc.Lchild.height(), lc.Rchild.height())
+	node.Height = 1 + utils.MaxInt(node.Lchild.height(), node.Rchild.height())
+	lc.Height = 1 + utils.MaxInt(lc.Lchild.height(), lc.Rchild.height())
 	return lc
 }
 
@@ -58,7 +58,7 @@ func (node *Node) rotate() *Node {
 		return nil
 	}
 
-	node.Height = 1 + utils.Max(node.Lchild.height(), node.Rchild.height())
+	node.Height = 1 + utils.MaxInt(node.Lchild.height(), node.Rchild.height())
 	balanceFactor := node.getBalanceFactor()
 
 	if balanceFactor < 2 && balanceFactor > -2 {
