@@ -109,6 +109,7 @@
   - 0006. ZigZag Conversion
   - 0008. String to Integer (atoi)
   - 0014. longest common prefix
+  - 0028. Implement strStr
   - 0038. Count and Say
   - 0049. group anagrams
   - 0058. length of last word
