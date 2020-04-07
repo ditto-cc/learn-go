@@ -4,26 +4,23 @@ import (
 	"learn-go/data-structure/utils"
 )
 
-func (node *Node) add(e utils.Comparable) *Node {
+func (tree *BSTree) add(node *Node, e utils.Comparable) *Node {
 	if node == nil {
+		tree.size++
 		return CreateNode(e)
 	}
 
 	if r := e.Compare(node.Val); r > 0 {
-		node.Rchild = node.Rchild.add(e)
+		node.Rchild = tree.add(node.Rchild, e)
 	} else if r < 0 {
-		node.Lchild = node.Lchild.add(e)
+		node.Lchild = tree.add(node.Lchild, e)
 	}
 	return node
 }
 
 // Add element to BSTree
 func (bst *BSTree) Add(e utils.Comparable) {
-	if bst == nil {
-		panic("nil BSTree. Error.")
-	}
-	bst.root = bst.root.add(e)
-	bst.size++
+	bst.root = bst.add(bst.root, e)
 }
 
 func (node *Node) getNode(e utils.Comparable) *Node {

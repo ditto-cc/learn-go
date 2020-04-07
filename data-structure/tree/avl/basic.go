@@ -81,27 +81,25 @@ func (node *Node) rotate() *Node {
 	return node
 }
 
-func (node *Node) add(key utils.Comparable, val interface{}) *Node {
+func (tree *AVLTree) add(node *Node, key utils.Comparable, val interface{}) *Node {
 	if node == nil {
+		tree.size++
 		return &Node{Key: key, Val: val, Height: 1}
 	}
 
 	if r := key.Compare(node.Key); r > 0 {
-		node.Rchild = node.Rchild.add(key, val)
+		node.Rchild = tree.add(node.Rchild, key, val)
 	} else if r < 0 {
-		node.Lchild = node.Lchild.add(key, val)
+		node.Lchild = tree.add(node.Lchild, key, val)
+	} else {
+		node.Val = val
 	}
 
 	return node.rotate()
 }
 
 func (avl *AVLTree) Add(key utils.Comparable, val interface{}) {
-	if node := avl.root.getNode(key); node != nil {
-		node.Val = val
-	} else {
-		avl.root = avl.root.add(key, val)
-		avl.size++
-	}
+	avl.root = avl.add(avl.root, key, val)
 }
 
 func (node *Node) getNode(key utils.Comparable) *Node {
