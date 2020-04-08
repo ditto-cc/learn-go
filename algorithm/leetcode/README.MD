@@ -146,6 +146,7 @@
   - 0089-Gray Code
   - 0179-Largest Number
   - 0365-Water and Jug Problem
+  - 0400-Nth Digit
   - 0461-hamming distance
   - 0829-consecutive numbers sum
   - 0836-Rectangle Overlap
