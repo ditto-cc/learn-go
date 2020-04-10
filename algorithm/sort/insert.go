@@ -5,9 +5,9 @@ func InsertionSort(data []int) {
 	for i := 1; i < n; i++ {
 		v := data[i]
 		j := i
-		for ; j > i && data[j-1] > v; j-- {
+		for ; j > 0 && data[j-1] > v; j-- {
 			data[j] = data[j-1]
 		}
-		data[i] = data[j]
+		data[j] = v
 	}
 }

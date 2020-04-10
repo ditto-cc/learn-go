@@ -1,10 +1,15 @@
 package sort
 
+import "math/rand"
+
 // quick sort 3 ways
 func quickSort(data []int, l, r int) {
 	if l >= r {
 		return
 	}
+
+	index := rand.Intn(r-l+1) + l
+	data[l], data[index] = data[index], data[l]
 
 	lt, gt, i := l, r+1, l+1
 	for i < gt {
