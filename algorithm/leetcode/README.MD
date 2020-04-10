@@ -164,6 +164,7 @@
 
 ### Sort
   - 0056-Merge Intervals
+  - 0057-Insert Interval
   - 0075-Sort Colors
   - 0912-Sort an Array
 
