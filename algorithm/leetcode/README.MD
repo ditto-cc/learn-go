@@ -14,6 +14,7 @@
   - 0509-fibonacci number
   - 0673-number of longest increasing subsequence
   - 0746-min cost climbing stairs
+  - 0887-Super Egg Drop
   - 1137-n-th tribonacci number
 
 ### Tree
