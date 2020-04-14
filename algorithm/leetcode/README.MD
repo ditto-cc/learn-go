@@ -160,6 +160,7 @@
   - 0208-Implement Trie (Prefix Tree)
   - 0211-Add and Search Word
   - 0225-Implement Stack using Queues
+  - 0355-Design Twitter
   - 0460-LFU Cache
   - 0705-Design HashSet
   - 0706-Design HashMap
