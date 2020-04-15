@@ -10,7 +10,7 @@ func (node *Node) inOrder(visit func(utils.Comparable)) {
 	}
 
 	node.Lchild.inOrder(visit)
-	visit(node.Val)
+	visit(node.Key)
 	node.Rchild.inOrder(visit)
 }
 
@@ -19,7 +19,7 @@ func (node *Node) preOrder(visit func(utils.Comparable)) {
 		return
 	}
 
-	visit(node.Val)
+	visit(node.Key)
 	node.Lchild.preOrder(visit)
 	node.Rchild.preOrder(visit)
 }
@@ -31,7 +31,7 @@ func (node *Node) postOrder(visit func(utils.Comparable)) {
 
 	node.Lchild.postOrder(visit)
 	node.Rchild.postOrder(visit)
-	visit(node.Val)
+	visit(node.Key)
 }
 
 // InOrder in-Order traverse
@@ -75,7 +75,7 @@ func (bst *BSTree) InOrderNR(visit func(utils.Comparable)) {
 		} else {
 			top := s[len(s)-1]
 			s = s[:len(s)-1]
-			visit(top.Val)
+			visit(top.Key)
 			p = top.Rchild
 		}
 	}
@@ -92,7 +92,7 @@ func (bst *BSTree) PreOrderNR(visit func(utils.Comparable)) {
 	for len(s) > 0 {
 		top := s[len(s)-1]
 		s = s[:len(s)-1]
-		visit(top.Val)
+		visit(top.Key)
 		if top.Rchild != nil {
 			s = append(s, top.Rchild)
 		}
@@ -126,7 +126,7 @@ func (bst *BSTree) PostOrderNR(visit func(utils.Comparable)) {
 	for len(s2) > 0 {
 		top := s2[len(s2)-1]
 		s2 = s2[:len(s2)-1]
-		visit(top.Val)
+		visit(top.Key)
 	}
 }
 
@@ -142,7 +142,7 @@ func (bst *BSTree) LevelOrder(visit func(utils.Comparable)) {
 	for len(q) > 0 {
 		front := q[0]
 		q = q[1:]
-		visit(front.Val)
+		visit(front.Key)
 		if front.Lchild != nil {
 			q = append(q, front.Lchild)
 		}

@@ -7,7 +7,8 @@ import (
 
 // Node tree node
 type Node struct {
-	Val            utils.Comparable
+	Key            utils.Comparable
+	Val            interface{}
 	Lchild, Rchild *Node
 }
 
@@ -17,13 +18,13 @@ type BSTree struct {
 	size int   // Size of tree node
 }
 
-// CreateNode construct Node
-func CreateNode(Val utils.Comparable) *Node {
-	return &Node{Val: Val}
+// NewNode construct Node
+func NewNode(key utils.Comparable, val interface{}) *Node {
+	return &Node{Key: key, Val: val}
 }
 
-// CreateBST construct BST
-func CreateBST() *BSTree {
+// NewBSTree construct BST
+func NewBSTree() *BSTree {
 	return &BSTree{}
 }
 
@@ -42,7 +43,7 @@ func (bst *BSTree) String() string {
 			front := q[0]
 			q = q[1:]
 			if front != nil {
-				str += fmt.Sprintf("%s", front.Val) + " "
+				str += fmt.Sprintf("%s", front.Key) + " "
 			} else {
 				str += "  "
 			}

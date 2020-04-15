@@ -4,60 +4,64 @@ import (
 	"learn-go/data-structure/utils"
 )
 
-func (tree *BSTree) add(node *Node, e utils.Comparable) *Node {
+func (bst *BSTree) add(node *Node, key utils.Comparable, val interface{}) *Node {
 	if node == nil {
-		tree.size++
-		return CreateNode(e)
+		bst.size++
+		return NewNode(key, val)
 	}
 
-	if r := e.Compare(node.Val); r > 0 {
-		node.Rchild = tree.add(node.Rchild, e)
+	if r := key.Compare(node.Key); r > 0 {
+		node.Rchild = bst.add(node.Rchild, key, val)
 	} else if r < 0 {
-		node.Lchild = tree.add(node.Lchild, e)
+		node.Lchild = bst.add(node.Lchild, key, val)
+	} else {
+		node.Val = val
 	}
 	return node
 }
 
 // Add element to BSTree
-func (bst *BSTree) Add(e utils.Comparable) {
-	bst.root = bst.add(bst.root, e)
+func (bst *BSTree) Add(key utils.Comparable, val interface{}) {
+	bst.root = bst.add(bst.root, key, val)
 }
 
-func (node *Node) getNode(e utils.Comparable) *Node {
+func (node *Node) getNode(key utils.Comparable) *Node {
 	if node == nil {
 		return nil
 	}
 
-	if r := e.Compare(node.Val); r == 0 {
+	if r := key.Compare(node.Key); r == 0 {
 		return node
 	} else if r < 0 {
-		return node.Lchild.getNode(e)
+		return node.Lchild.getNode(key)
 	} else {
-		return node.Rchild.getNode(e)
+		return node.Rchild.getNode(key)
 	}
 }
 
-func (node *Node) removeMin(minNode *Node) *Node {
+func (bst *BSTree) removeMin(node, minNode *Node) *Node {
 	if node == nil {
 		return nil
 	}
 	if node.Lchild == nil {
 		minNode = node
+		bst.size--
 		return node.Rchild
 	}
-	node.Lchild = node.Lchild.removeMin(minNode)
+	node.Lchild = bst.removeMin(node.Lchild, minNode)
 	return node
 }
 
-func (node *Node) removeMax(maxNode *Node) *Node {
+func (bst *BSTree) removeMax(node *Node, maxNode *Node) *Node {
 	if node == nil {
 		return nil
 	}
 	if node.Rchild == nil {
 		maxNode = node
+		bst.size--
 		return node.Lchild
 	}
-	node.Rchild = node.Rchild.removeMax(maxNode)
+	node.Rchild = bst.removeMax(node.Rchild, maxNode)
 	return node
 }
 
@@ -66,11 +70,10 @@ func (bst *BSTree) RemoveMin() utils.Comparable {
 		panic("nil BSTree.")
 	}
 
-	minNode := bst.root
-	bst.root = bst.root.removeMin(minNode)
-	bst.size--
+	var minNode *Node
+	bst.root = bst.removeMin(bst.root, minNode)
 	if minNode != nil {
-		return minNode.Val
+		return minNode.Key
 	}
 	return nil
 }
@@ -80,25 +83,24 @@ func (bst *BSTree) RemoveMax() utils.Comparable {
 		panic("nil BSTree.")
 	}
 
-	maxNode := bst.root
-	bst.root = bst.root.removeMax(maxNode)
-	bst.size--
+	var maxNode *Node
+	bst.root = bst.removeMax(bst.root, maxNode)
 	if maxNode != nil {
-		return maxNode.Val
+		return maxNode.Key
 	}
 	return nil
 }
 
-func (node *Node) remove(e utils.Comparable) *Node {
+func (bst *BSTree) remove(node *Node, key utils.Comparable) *Node {
 	if node == nil {
 		return nil
 	}
 
 	retNode := node
-	if r := e.Compare(node.Val); r < 0 {
-		node.Lchild = node.Lchild.remove(e)
+	if r := key.Compare(node.Key); r < 0 {
+		node.Lchild = bst.remove(node.Lchild, key)
 	} else if r > 0 {
-		node.Rchild = node.Rchild.remove(e)
+		node.Rchild = bst.remove(node.Rchild, key)
 	} else {
 		if node.Lchild == nil {
 			retNode = node.Rchild
@@ -108,7 +110,7 @@ func (node *Node) remove(e utils.Comparable) *Node {
 			node.Lchild = nil
 		} else {
 			retNode = node.Rchild
-			node.Rchild = node.Rchild.removeMin(retNode)
+			node.Rchild = bst.removeMin(bst.root, retNode)
 			retNode.Lchild, retNode.Rchild = node.Lchild, node.Rchild
 			node.Lchild, node.Rchild = nil, nil
 		}
@@ -116,13 +118,12 @@ func (node *Node) remove(e utils.Comparable) *Node {
 	return retNode
 }
 
-func (bst *BSTree) Remove(e utils.Comparable) {
+func (bst *BSTree) Remove(key utils.Comparable) {
 	if bst == nil {
 		panic("nil BSTree.")
 	}
 
-	bst.root = bst.root.remove(e)
-	bst.size--
+	bst.root = bst.remove(bst.root, key)
 }
 
 func (bst *BSTree) Contains(e utils.Comparable) bool {

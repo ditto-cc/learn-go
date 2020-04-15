@@ -11,7 +11,7 @@ func (node *Node) height() int {
 	return node.Height
 }
 
-func (avl *AVLTree) Height() int {
+func (avl *Tree) Height() int {
 	if avl == nil {
 		panic("nil AVLTree.")
 	}
@@ -81,16 +81,16 @@ func (node *Node) rotate() *Node {
 	return node
 }
 
-func (tree *AVLTree) add(node *Node, key utils.Comparable, val interface{}) *Node {
+func (avl *Tree) add(node *Node, key utils.Comparable, val interface{}) *Node {
 	if node == nil {
-		tree.size++
-		return &Node{Key: key, Val: val, Height: 1}
+		avl.size++
+		return NewNode(key, val)
 	}
 
 	if r := key.Compare(node.Key); r > 0 {
-		node.Rchild = tree.add(node.Rchild, key, val)
+		node.Rchild = avl.add(node.Rchild, key, val)
 	} else if r < 0 {
-		node.Lchild = tree.add(node.Lchild, key, val)
+		node.Lchild = avl.add(node.Lchild, key, val)
 	} else {
 		node.Val = val
 	}
@@ -98,7 +98,7 @@ func (tree *AVLTree) add(node *Node, key utils.Comparable, val interface{}) *Nod
 	return node.rotate()
 }
 
-func (avl *AVLTree) Add(key utils.Comparable, val interface{}) {
+func (avl *Tree) Add(key utils.Comparable, val interface{}) {
 	avl.root = avl.add(avl.root, key, val)
 }
 
@@ -148,7 +148,7 @@ func (node *Node) removeMax(maxNode *Node) *Node {
 	return retNode.rotate()
 }
 
-func (avl *AVLTree) RemoveMin() interface{} {
+func (avl *Tree) RemoveMin() interface{} {
 	if avl == nil {
 		return nil
 	}
@@ -161,7 +161,7 @@ func (avl *AVLTree) RemoveMin() interface{} {
 	return minNode.Val
 }
 
-func (avl *AVLTree) RemoveMax() interface{} {
+func (avl *Tree) RemoveMax() interface{} {
 	if avl == nil {
 		return nil
 	}
@@ -174,16 +174,16 @@ func (avl *AVLTree) RemoveMax() interface{} {
 	return maxNode.Val
 }
 
-func (node *Node) remove(key utils.Comparable) *Node {
+func (avl *Tree) remove(node *Node, key utils.Comparable) *Node {
 	if node == nil {
 		return nil
 	}
 
 	retNode := node
 	if r := key.Compare(node.Key); r > 0 {
-		retNode.Rchild = retNode.Rchild.remove(key)
+		retNode.Rchild = avl.remove(retNode.Rchild, key)
 	} else if r < 0 {
-		retNode.Lchild = retNode.Lchild.remove(key)
+		retNode.Lchild = avl.remove(retNode.Lchild, key)
 	} else {
 		if node.Lchild == nil {
 			retNode = node.Rchild
@@ -202,27 +202,27 @@ func (node *Node) remove(key utils.Comparable) *Node {
 	return retNode.rotate()
 }
 
-func (avl *AVLTree) Remove(key utils.Comparable) interface{} {
+func (avl *Tree) Remove(key utils.Comparable) interface{} {
 	if avl == nil {
 		panic("nil AVLTree.")
 	}
 	if node := avl.root.getNode(key); node == nil {
 		return nil
 	} else {
-		avl.root = avl.root.remove(key)
+		avl.root = avl.remove(avl.root, key)
 		avl.size--
 		return node.Val
 	}
 }
 
-func (avl *AVLTree) Contains(key utils.Comparable) bool {
+func (avl *Tree) Contains(key utils.Comparable) bool {
 	if avl == nil {
 		panic("nil AVLTree.")
 	}
 	return avl.root.getNode(key) != nil
 }
 
-func (avl *AVLTree) Get(key utils.Comparable) interface{} {
+func (avl *Tree) Get(key utils.Comparable) interface{} {
 	if avl == nil {
 		panic("nil AVLTree.")
 	}
@@ -233,7 +233,7 @@ func (avl *AVLTree) Get(key utils.Comparable) interface{} {
 	return nil
 }
 
-func (avl *AVLTree) Set(key utils.Comparable, val interface{}) bool {
+func (avl *Tree) Set(key utils.Comparable, val interface{}) bool {
 	if avl == nil {
 		panic("nil Tree")
 	}
@@ -245,10 +245,10 @@ func (avl *AVLTree) Set(key utils.Comparable, val interface{}) bool {
 	return false
 }
 
-func (avl *AVLTree) Size() int {
+func (avl *Tree) Size() int {
 	return avl.size
 }
 
-func (avl *AVLTree) Empty() bool {
+func (avl *Tree) Empty() bool {
 	return avl.size > 0
 }

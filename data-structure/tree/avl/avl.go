@@ -15,22 +15,22 @@ type Node struct {
 }
 
 // AVLTree Binary Search Tree
-type AVLTree struct {
+type Tree struct {
 	root *Node // Root
 	size int   // Size of tree node
 }
 
-// CreateNode construct Node
-func CreateNode(Val utils.Comparable) *Node {
-	return &Node{Key: Val}
+// NewNode construct Node
+func NewNode(key utils.Comparable, val interface{}) *Node {
+	return &Node{Key: key, Val: val, Height: 1}
 }
 
-// CreateAVL construct BST
-func CreateAVL() *AVLTree {
-	return &AVLTree{}
+// NewTree construct AVLTree
+func NewTree() *Tree {
+	return &Tree{}
 }
 
-func (avl *AVLTree) String() string {
+func (avl *Tree) String() string {
 	if avl == nil || avl.root == nil {
 		return ""
 	}

@@ -6,7 +6,7 @@ import (
 )
 
 type TreeMap struct {
-	tree *avl.AVLTree
+	tree *avl.Tree
 }
 
 func CreateTreeMap() *TreeMap {

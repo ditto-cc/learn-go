@@ -35,7 +35,7 @@ func (node *Node) postOrder(visit func(utils.Comparable, interface{})) {
 }
 
 // InOrder in-Order traverse
-func (avl *AVLTree) InOrder(visit func(utils.Comparable, interface{})) {
+func (avl *Tree) InOrder(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -44,7 +44,7 @@ func (avl *AVLTree) InOrder(visit func(utils.Comparable, interface{})) {
 }
 
 // PreOrder pre-Order traverse
-func (avl *AVLTree) PreOrder(visit func(utils.Comparable, interface{})) {
+func (avl *Tree) PreOrder(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -53,7 +53,7 @@ func (avl *AVLTree) PreOrder(visit func(utils.Comparable, interface{})) {
 }
 
 // PostOrder post-Order traverse
-func (avl *AVLTree) PostOrder(visit func(utils.Comparable, interface{})) {
+func (avl *Tree) PostOrder(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -61,7 +61,7 @@ func (avl *AVLTree) PostOrder(visit func(utils.Comparable, interface{})) {
 	avl.root.postOrder(visit)
 }
 
-func (avl *AVLTree) InOrderNR(visit func(utils.Comparable, interface{})) {
+func (avl *Tree) InOrderNR(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -81,7 +81,7 @@ func (avl *AVLTree) InOrderNR(visit func(utils.Comparable, interface{})) {
 	}
 }
 
-func (avl *AVLTree) PreOrderNR(visit func(utils.Comparable, interface{})) {
+func (avl *Tree) PreOrderNR(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -102,7 +102,7 @@ func (avl *AVLTree) PreOrderNR(visit func(utils.Comparable, interface{})) {
 	}
 }
 
-func (avl *AVLTree) PostOrderNR(visit func(utils.Comparable, interface{})) {
+func (avl *Tree) PostOrderNR(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
@@ -130,7 +130,7 @@ func (avl *AVLTree) PostOrderNR(visit func(utils.Comparable, interface{})) {
 	}
 }
 
-func (avl *AVLTree) LevelOrder(visit func(utils.Comparable, interface{})) {
+func (avl *Tree) LevelOrder(visit func(utils.Comparable, interface{})) {
 	if avl == nil {
 		panic("nil AVLTree. Error.")
 	}
