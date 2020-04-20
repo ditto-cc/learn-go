@@ -130,6 +130,7 @@
   - 0034-find first and last position of element in sorted array
   - 0074-Search a 2D Matrix
   - 0162-Find Peak Element
+  - 0200-Number of Islands
   - 0994-rotting oranges
   - 1001-grid illumination
   - 1160-Find Words That Can Be Formed by Characters
