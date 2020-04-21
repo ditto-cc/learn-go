@@ -31,6 +31,7 @@
   - 0114-Flatten Binary Tree to Linked List
   - 0124-Binary Tree Maximum Path Sum
   - 0173-binary search tree iterator
+  - 0199-Binary Tree Right Side View
   - 0226-invert binary tree
   - 0654-maximum binary tree
   - 1261-find elements in a contaminated binary tree
