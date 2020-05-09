@@ -150,6 +150,7 @@
   - 0050-Pow
   - 0066-Plus One
   - 0067-Add Binary
+  - 0069-Sqrt
   - 0089-Gray Code
   - 0179-Largest Number
   - 0365-Water and Jug Problem
