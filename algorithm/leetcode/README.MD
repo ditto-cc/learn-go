@@ -33,6 +33,8 @@
   - 0173-binary search tree iterator
   - 0199-Binary Tree Right Side View
   - 0226-invert binary tree
+  - 0235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree
+  - 0236-Lowest-Common-Ancestor-of-a-Binary-Tree
   - 0572-Subtree of Another Tree
   - 0654-maximum binary tree
   - 1261-find elements in a contaminated binary tree
