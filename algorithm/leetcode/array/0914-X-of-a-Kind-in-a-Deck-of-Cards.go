@@ -79,9 +79,8 @@ func gcd(a, b int) int {
 	case r1 == 1 && r2 == 1:
 		if a < b {
 			return gcd(b-a, a)
-		} else {
-			return gcd(a-b, b)
 		}
+		return gcd(a-b, b)
 	case r1 == 0 && r2 == 1:
 		return gcd(a>>1, b)
 	case r1 == 1 && r2 == 0:

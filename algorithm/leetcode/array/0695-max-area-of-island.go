@@ -53,7 +53,7 @@ func maxAreaOfIsland(grid [][]int) int {
 	res, cur := 0, 0
 
 	for i, row := range grid {
-		for j, _ := range row {
+		for j := range row {
 
 			cur = 0
 			maxAreaOfIslandSolution(grid, i, j, m, n, &cur)
