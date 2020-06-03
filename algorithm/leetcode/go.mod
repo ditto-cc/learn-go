@@ -1,3 +1,3 @@
-module learn-go/leetcode
+module learn-go/algorithm/leetcode
 
 go 1.13
