@@ -102,6 +102,7 @@
   - 0017-letter combinations of a phone number
   - 0022-generate parentheses
   - 0031-next permutation
+  - 0037-Sudoku-Solver
   - 0039-combination sum
   - 0040-combination sum II
   - 0046-permutations
