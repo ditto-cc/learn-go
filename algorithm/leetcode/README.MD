@@ -187,3 +187,6 @@
 
 ### Graph
   - 0210-Course-Schedule-II
+
+### UnionFind
+  - 0128-Longest-Consecutive-Sequence

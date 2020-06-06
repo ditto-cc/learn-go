@@ -1,4 +1,4 @@
-package treemap
+package orderedMap
 
 import (
 	"learn-go/data-structure/tree/avl"
@@ -10,7 +10,7 @@ type TreeMap struct {
 }
 
 func CreateTreeMap() *TreeMap {
-	return &TreeMap{tree: avl.CreateAVL()}
+	return &TreeMap{tree: avl.NewTree()}
 }
 
 func (m *TreeMap) Get(key utils.Comparable) interface{} {
