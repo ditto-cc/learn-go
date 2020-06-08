@@ -193,3 +193,4 @@
 
 ### UnionFind
   - 0128-Longest-Consecutive-Sequence
+  - 0990-Satisfiability-of-Equality-Equations
