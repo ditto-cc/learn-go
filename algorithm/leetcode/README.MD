@@ -16,6 +16,7 @@
   - 0746-min cost climbing stairs
   - 0837-New-21-Game
   - 0887-Super Egg Drop
+  - 1014-Best-Sightseeing-Pair
   - 1137-n-th tribonacci number
 
 ### Tree
