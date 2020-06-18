@@ -39,6 +39,7 @@
   - 0236-Lowest-Common-Ancestor-of-a-Binary-Tree
   - 0572-Subtree of Another Tree
   - 0654-maximum binary tree
+  - 1028-Recover-a-Tree-From-Preorder-Traversal
   - 1261-find elements in a contaminated binary tree
   - 1302-deepest leaves sum
   - 1305-all elements in two binary search trees
