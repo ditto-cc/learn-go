@@ -107,6 +107,7 @@
 | 0914 | X of a Kind in a Deck of Cards                       | [solution](array/0914-X-of-a-Kind-in-a-Deck-of-Cards.go)
 | 0945 | Minimum Increment to Make Array Unique               | [solution](array/0945-Minimum-Increment-to-Make-Array-Unique.go)
 | 0999 | Available Captures for Rook                          | [solution](array/0999-Available-Captures-for-Rook.go)
+| 1001 | Grid-Illumination                                    | [solution](array/1001-Grid-Illumination.go)
 | 1010 | pairs of songs with total durations divisible by 60  | [solution](array/1010-pairs-of-songs-with-total-durations-divisible-by-60.go)
 | 1013 | partition array into three parts with equal sum      | [solution](array/1013-partition-array-into-three-parts-with-equal-sum.go)
 | 1103 | distribute candies to people                         | [solution](array/1103-distribute-candies-to-people.go)
