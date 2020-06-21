@@ -2,6 +2,7 @@
 
 | ID   | Problem                                  | Solution                                                        |
 | ---- | ---------------------------------------- | --------------------------------------------------------------- |
+| 0010 | Regular Expression Matching              | [solution](dp/0010-Regular-Expression-Matching.go)                         |
 | 0053 | Maximum-Subarray                         | [solution](dp/0053-maximum-subarray.go)                         |
 | 0062 | Unique-Paths                             | [solution](dp/0062-unique-paths.go)                             |
 | 0063 | Unique-Paths-II                          | [solution](dp/0063-unique-paths-II.go)                          |
